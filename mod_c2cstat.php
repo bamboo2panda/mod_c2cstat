@@ -11,7 +11,9 @@
 use Joomla\CMS\Helper\ModuleHelper;
 
 defined('_JEXEC') or die;
+require_once __DIR__.'/helper.php';
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$relations = ModC2cstatHelper::getRelations($params);
 
-require ModuleHelper::getLayoutPath('mod_mod_c2cstat', $params->get('layout', 'default'));
+require ModuleHelper::getLayoutPath('mod_c2cstat', $params->get('layout', 'default'));

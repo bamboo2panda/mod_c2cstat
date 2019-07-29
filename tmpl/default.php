@@ -14,6 +14,13 @@ defined('_JEXEC') or die;
 $domain = $params->get('domain', 'https://www.joomla.org');
 ?>
 
-<a href="<?php echo $domain; ?>">
-	<?php echo 'mod_c2cstat'; ?>
-</a>
+    <a href="<?php echo $domain; ?>">
+        <?php echo 'mod_c2cstat'; ?>
+    </a>
+
+<?php
+
+foreach ($relations as $relation){
+    print_r($relation->source_city);
+    echo '<br>';
+}

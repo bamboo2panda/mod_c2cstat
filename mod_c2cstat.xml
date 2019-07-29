@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+	<name>MOD_C2CSTAT</name>
+	<creationDate>26.07.2019</creationDate>
+	<author>Pavel</author>
+	<authorEmail>your@email.com</authorEmail>
+	<authorUrl>http://your.url.com</authorUrl>
+	<copyright>A copyright</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>MOD_C2CSTAT_XML_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_c2cstat">mod_c2cstat.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<filename>mod_c2cstat.xml</filename>
+		<filename>helper.php</filename>
+	</files>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="mod_c2cstat">https://www.example.com/mod_c2cstat.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field
+					name="relations"
+					type="subform"
+					label="Использование технологий"
+					description=""
+					multiple="1"
+					min="1"
+					max="1000"
+					>
+					<form>
+					<field name="source_city" type="list" default="" label="Select an option" description="">
+						<option value="Архангельск">Архангельск</option>
+						<option value="Ачинск">Ачинск</option>
+						<option value="Балаково">Балаково</option>
+						<option value="Барнаул">Барнаул</option>
+						<option value="Белгород">Белгород</option>
+						<option value="Березники">Березники</option>
+						<option value="Бийск">Бийск</option>
+						<option value="Братск">Братск</option>
+						<option value="Брянск">Брянск</option>
+						<option value="Великий Новгород">Великий Новгород</option>
+						<option value="Владимир">Владимир</option>
+						<option value="Владивосток">Владивосток</option>
+						<option value="Волгоград">Волгоград</option>
+						<option value="Волжский">Волжский</option>
+						<option value="Воронеж">Воронеж</option>
+						<option value="Выборг">Выборг</option>
+						<option value="Дзержинск">Дзержинск</option>
+						<option value="Димитровград">Димитровград</option>
+						<option value="Евпатория">Евпатория</option>
+						<option value="Екатеринбург">Екатеринбург</option>
+						<option value="Елец">Елец</option>
+						<option value="Златоуст">Златоуст</option>
+						<option value="Иваново">Иваново</option>
+						<option value="Ижевск">Ижевск</option>
+						<option value="Иркутск">Иркутск</option>
+						<option value="Йошкар-Ола">Йошкар-Ола</option>
+						<option value="Казань">Казань</option>
+						<option value="Калининград">Калининград</option>
+						<option value="Калуга">Калуга</option>
+						<option value="Каспийск">Каспийск</option>
+						<option value="Кемерово">Кемерово</option>
+						<option value="Киров">Киров</option>
+						<option value="Кисловодск">Кисловодск</option>
+						<option value="Коломна">Коломна</option>
+						<option value="Кострома">Кострома</option>
+						<option value="Краснодар">Краснодар</option>
+						<option value="Красноярск">Красноярск</option>
+						<option value="Курган">Курган</option>
+						<option value="Курск">Курск</option>
+						<option value="Липецк">Липецк</option>
+						<option value="Магнитогорск">Магнитогорск</option>
+						<option value="Миасс">Миасс</option>
+						<option value="Москва">Москва</option>
+						<option value="Набережные Челны">Набережные Челны</option>
+						<option value="Находка">Находка</option>
+						<option value="Нефтекамск">Нефтекамск</option>
+						<option value="Нефтеюганск">Нефтеюганск</option>
+						<option value="Нижневартовск">Нижневартовск</option>
+						<option value="Нижний Новгород">Нижний Новгород</option>
+						<option value="Новокузнецк">Новокузнецк</option>
+						<option value="Новомосковск">Новомосковск</option>
+						<option value="Новороссийск">Новороссийск</option>
+						<option value="Новосибирск">Новосибирск</option>
+						<option value="Ногинск">Ногинск</option>
+						<option value="Обнинск">Обнинск</option>
+						<option value="Омск">Омск</option>
+						<option value="Орел">Орел</option>
+						<option value="Оренбург">Оренбург</option>
+						<option value="Пенза">Пенза</option>
+						<option value="Петрозаводск">Петрозаводск</option>
+						<option value="Прокопьевск">Прокопьевск</option>
+						<option value="Псков">Псков</option>
+						<option value="Пятигорск">Пятигорск</option>
+						<option value="Ростов-на-Дону">Ростов-на-Дону</option>
+						<option value="Рубцовск">Рубцовск</option>
+						<option value="Рыбинск">Рыбинск</option>
+						<option value="Рязань">Рязань</option>
+						<option value="Салават">Салават</option>
+						<option value="Самара">Самара</option>
+						<option value="Саранск">Саранск</option>
+						<option value="Саратов">Саратов</option>
+						<option value="Севастополь">Севастополь</option>
+						<option value="Северск">Северск</option>
+						<option value="Смоленск">Смоленск</option>
+						<option value="Сочи">Сочи</option>
+						<option value="Ставрополь">Ставрополь</option>
+						<option value="Старый Оскол">Старый Оскол</option>
+						<option value="Тамбов">Тамбов</option>
+						<option value="Тверь">Тверь</option>
+						<option value="Тольятти">Тольятти</option>
+						<option value="Томск">Томск</option>
+						<option value="Тюмень">Тюмень</option>
+						<option value="Улан-Удэ">Улан-Удэ</option>
+						<option value="Ульяновск">Ульяновск</option>
+						<option value="Уфа">Уфа</option>
+						<option value="Хабаровск">Хабаровск</option>
+						<option value="Чебоксары">Чебоксары</option>
+						<option value="Челябинск">Челябинск</option>
+						<option value="Чита">Чита</option>
+						<option value="Элиста">Элиста</option>
+						<option value="Энгельс">Энгельс</option>
+						<option value="Якутск">Якутск</option>
+						<option value="Ярославль">Ярославль</option>
+					</field>
+					<field name="client_city" type="list" default="" label="Select an option" description="">
+						<option value="Архангельск">Архангельск</option>
+						<option value="Ачинск">Ачинск</option>
+						<option value="Балаково">Балаково</option>
+						<option value="Барнаул">Барнаул</option>
+						<option value="Белгород">Белгород</option>
+						<option value="Березники">Березники</option>
+						<option value="Бийск">Бийск</option>
+						<option value="Братск">Братск</option>
+						<option value="Брянск">Брянск</option>
+						<option value="Великий Новгород">Великий Новгород</option>
+						<option value="Владимир">Владимир</option>
+						<option value="Владивосток">Владивосток</option>
+						<option value="Волгоград">Волгоград</option>
+						<option value="Волжский">Волжский</option>
+						<option value="Воронеж">Воронеж</option>
+						<option value="Выборг">Выборг</option>
+						<option value="Дзержинск">Дзержинск</option>
+						<option value="Димитровград">Димитровград</option>
+						<option value="Евпатория">Евпатория</option>
+						<option value="Екатеринбург">Екатеринбург</option>
+						<option value="Елец">Елец</option>
+						<option value="Златоуст">Златоуст</option>
+						<option value="Иваново">Иваново</option>
+						<option value="Ижевск">Ижевск</option>
+						<option value="Иркутск">Иркутск</option>
+						<option value="Йошкар-Ола">Йошкар-Ола</option>
+						<option value="Казань">Казань</option>
+						<option value="Калининград">Калининград</option>
+						<option value="Калуга">Калуга</option>
+						<option value="Каспийск">Каспийск</option>
+						<option value="Кемерово">Кемерово</option>
+						<option value="Киров">Киров</option>
+						<option value="Кисловодск">Кисловодск</option>
+						<option value="Коломна">Коломна</option>
+						<option value="Кострома">Кострома</option>
+						<option value="Краснодар">Краснодар</option>
+						<option value="Красноярск">Красноярск</option>
+						<option value="Курган">Курган</option>
+						<option value="Курск">Курск</option>
+						<option value="Липецк">Липецк</option>
+						<option value="Магнитогорск">Магнитогорск</option>
+						<option value="Миасс">Миасс</option>
+						<option value="Москва">Москва</option>
+						<option value="Набережные Челны">Набережные Челны</option>
+						<option value="Находка">Находка</option>
+						<option value="Нефтекамск">Нефтекамск</option>
+						<option value="Нефтеюганск">Нефтеюганск</option>
+						<option value="Нижневартовск">Нижневартовск</option>
+						<option value="Нижний Новгород">Нижний Новгород</option>
+						<option value="Новокузнецк">Новокузнецк</option>
+						<option value="Новомосковск">Новомосковск</option>
+						<option value="Новороссийск">Новороссийск</option>
+						<option value="Новосибирск">Новосибирск</option>
+						<option value="Ногинск">Ногинск</option>
+						<option value="Обнинск">Обнинск</option>
+						<option value="Омск">Омск</option>
+						<option value="Орел">Орел</option>
+						<option value="Оренбург">Оренбург</option>
+						<option value="Пенза">Пенза</option>
+						<option value="Петрозаводск">Петрозаводск</option>
+						<option value="Прокопьевск">Прокопьевск</option>
+						<option value="Псков">Псков</option>
+						<option value="Пятигорск">Пятигорск</option>
+						<option value="Ростов-на-Дону">Ростов-на-Дону</option>
+						<option value="Рубцовск">Рубцовск</option>
+						<option value="Рыбинск">Рыбинск</option>
+						<option value="Рязань">Рязань</option>
+						<option value="Салават">Салават</option>
+						<option value="Самара">Самара</option>
+						<option value="Саранск">Саранск</option>
+						<option value="Саратов">Саратов</option>
+						<option value="Севастополь">Севастополь</option>
+						<option value="Северск">Северск</option>
+						<option value="Смоленск">Смоленск</option>
+						<option value="Сочи">Сочи</option>
+						<option value="Ставрополь">Ставрополь</option>
+						<option value="Старый Оскол">Старый Оскол</option>
+						<option value="Тамбов">Тамбов</option>
+						<option value="Тверь">Тверь</option>
+						<option value="Тольятти">Тольятти</option>
+						<option value="Томск">Томск</option>
+						<option value="Тюмень">Тюмень</option>
+						<option value="Улан-Удэ">Улан-Удэ</option>
+						<option value="Ульяновск">Ульяновск</option>
+						<option value="Уфа">Уфа</option>
+						<option value="Хабаровск">Хабаровск</option>
+						<option value="Чебоксары">Чебоксары</option>
+						<option value="Челябинск">Челябинск</option>
+						<option value="Чита">Чита</option>
+						<option value="Элиста">Элиста</option>
+						<option value="Энгельс">Энгельс</option>
+						<option value="Якутск">Якутск</option>
+						<option value="Ярославль">Ярославль</option>
+					</field>
+					<field
+						name="technology"
+						type="text"
+						label="Технология"
+						description=""
+						size="50"
+						/>
+					<field
+						name="abuut"
+						type="textarea"
+						label="Описание"
+						description=""
+						cols="40"
+						rows="8"
+						/>
+					</form>
+
+				</field>
+			</fieldset>
+			<fieldset
+					name="advanced">
+				<field
+						name="moduleclass_sfx"
+						type="text"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
+
+
+
