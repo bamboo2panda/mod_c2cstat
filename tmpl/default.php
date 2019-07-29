@@ -21,6 +21,6 @@ $domain = $params->get('domain', 'https://www.joomla.org');
 <?php
 
 foreach ($relations as $relation){
-    print_r($relation->source_city);
+    print_r($relation->technology);
     echo '<br>';
 }
