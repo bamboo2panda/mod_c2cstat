@@ -13,10 +13,16 @@
 	<files>
 		<filename module="mod_c2cstat">mod_c2cstat.php</filename>
 		<folder>tmpl</folder>
+        <folder>dist</folder>
+
 		<folder>language</folder>
 		<filename>mod_c2cstat.xml</filename>
 		<filename>helper.php</filename>
 	</files>
+
+    <media folder="dist" destination="mod_c2cstat">
+        <filename>js/script.js</filename>
+    </media>
 
 	<!-- Update servers -->
 	<updateservers>

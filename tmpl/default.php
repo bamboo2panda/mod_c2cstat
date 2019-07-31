@@ -9,18 +9,13 @@
  */
 
 defined('_JEXEC') or die;
+$document = JFactory::getDocument();
+$document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
 
-// Access to module parameters
-$domain = $params->get('domain', 'https://www.joomla.org');
-?>
-
-    <a href="<?php echo $domain; ?>">
-        <?php echo 'mod_c2cstat'; ?>
-    </a>
-
-<?php
 
 foreach ($relations as $relation){
     print_r($relation->technology);
     echo '<br>';
 }
+
+?>
