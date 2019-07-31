@@ -21,8 +21,7 @@ foreach ($relations as $relation){
 ?>
 
 <!-- Load d3.js -->
-<script src="https://d3js.org/d3.v5.js"></script>
-
+<script src="https://d3js.org/d3.v4.js"></script>
 
 <!-- Load color scale -->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -47,14 +46,6 @@ foreach ($relations as $relation){
 
     //Read the data
     d3.csv("https://test1.mioo.ru/media/mod_c2cstat/data2.csv", function(data) {
-
-        // var force = d3.force()
-        //     .gravity(0.05)
-        //     .charge(function(d, i) { return i ? 0 : -2000; })
-        //     .nodes(nodes)
-        //     .size([width, height]);
-
-        // force.start();
 
         // Add X axis 123
         var x = d3.scaleLinear()
