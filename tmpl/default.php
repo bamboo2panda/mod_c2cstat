@@ -29,18 +29,39 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 <script type="text/javascript">
-
+    function log(sel,msg) {
+        console.log(msg,sel);
+    }
     dataset = {
-        "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва"},
-            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва"},
-            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва"},
-            {"Name":"Субботы московского школьника","Count":3,"City":"Москва"},
-            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск"}]
+        "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li></ul>"},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
+            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":"<ul><li>Ижевск</li></ul>"}]
 
     };
 
     var diameter = 750;
     var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function(d) {
+        Tooltip
+            .style("opacity", 1)
+
+    }
+    var mousemove = function(d) {
+        Tooltip
+            .html("<h5>Реализуют проект:<br>" + d.data.Partners + "</h5>")
+            .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
+            .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
+
+    }
+    var mouseleave = function(d) {
+        Tooltip
+            .style("opacity", 0)
+
+    }
 
     var bubble = d3.pack(dataset)
         .size([diameter, diameter])
@@ -75,7 +96,12 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
             return color(i);
         })
         .attr("stroke", "white")
-        .style("stroke-width", "2px");
+        .style("stroke-width", "2px")
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+
+    ;
 
     node.append('foreignObject')
         .attr('x', function(d) {
@@ -89,7 +115,11 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         })
         .attr('height', function(d) {
             return d.r * 1.5;
+
         })
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
         .html(function (d,i) {
             return '<div style="width:' +
                 d.r * 1.5 +
@@ -128,5 +158,38 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         .attr("transform", function(d) {
             return "translate(" + d.x + "," + d.y + ")";
         });
+    // create a tooltip
+    var Tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function(d) {
+        Tooltip
+            .style("opacity", 1)
+        d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
+    }
+    var mousemove = function(d) {
+        Tooltip
+            .html("The exact value of<br>this cell is: " + d.value)
+            .style("left", (d3.mouse(this)[0]+70) + "px")
+            .style("top", (d3.mouse(this)[1]) + "px")
+    }
+    var mouseleave = function(d) {
+        Tooltip
+            .style("opacity", 0)
+        d3.select(this)
+            .style("stroke", "none")
+            .style("opacity", 0.8)
+    }
+
 
 </script>
