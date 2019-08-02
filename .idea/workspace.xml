@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="811bcd5f-01ff-4c77-b111-ee1006d432e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmpl/default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tmpl/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="514">
+              <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
               <folding>
                 <element signature="e#6#221#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -35,13 +34,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="124" column="10" lean-forward="true" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="119">
+              <caret line="60" column="15" lean-forward="true" selection-end-line="194" selection-end-column="9" />
               <folding>
                 <element signature="e#6#221#0#PHP" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -160,9 +156,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
+    <option name="x" value="661" />
+    <option name="y" value="134" />
     <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -229,7 +226,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564148292024</updated>
       <workItem from="1564148296358" duration="9750000" />
-      <workItem from="1564408596524" duration="44502000" />
+      <workItem from="1564408596524" duration="50351000" />
     </task>
     <task id="LOCAL-00001" summary="Get data from Joomla.">
       <created>1564390023237</created>
@@ -273,14 +270,28 @@
       <option name="project" value="LOCAL" />
       <updated>1564733069091</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Good bubbles.">
+      <created>1564733133743</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1564733133743</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added tooltips with partners.">
+      <created>1564740651416</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564740651416</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54252000" />
+    <option name="totallyTimeSpent" value="60101000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="661" y="134" width="960" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -289,7 +300,7 @@
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.511745" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="3" visible="true" weight="0.33480176" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.5100671" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
@@ -312,7 +323,8 @@
     <MESSAGE value="Data from CSV&#10;Visualisation from D3" />
     <MESSAGE value="Bubbles hierarchy." />
     <MESSAGE value="Good bubbles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Good bubbles." />
+    <MESSAGE value="Added tooltips with partners." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tooltips with partners." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/helper.php">
@@ -406,13 +418,10 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="124" column="10" lean-forward="true" selection-end-line="131" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="60" column="15" lean-forward="true" selection-end-line="194" selection-end-column="9" />
           <folding>
             <element signature="e#6#221#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -421,8 +430,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tmpl/default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+        <state relative-caret-position="514">
+          <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
           <folding>
             <element signature="e#6#221#0#PHP" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
