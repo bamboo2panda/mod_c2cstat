@@ -29,6 +29,13 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 <script type="text/javascript">
+    function guid() {
+        function _p8(s) {
+            var p = (Math.random().toString(16)+"000000000").substr(2,8);
+            return s ? "-" + p.substr(0,4) + "-" + p.substr(4,4) : p ;
+        }
+        return _p8() + _p8(true) + _p8(true) + _p8();
+    }
     function log(sel,msg) {
         console.log(msg,sel);
     }
@@ -46,20 +53,29 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
 
     // Three function that change the tooltip when user hover / move / leave a cell
     var mouseover = function(d) {
-        Tooltip
-            .style("opacity", 1)
+        Tooltip.style("opacity") === "1" ? Tooltip.style("opacity", 0):
+            Tooltip
+                .style("opacity", 1)
+                .html("<h5>Реализуют проект:<br>" + d.data.Partners + "</h5>")
+                .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
+                .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
+                .style("class", "bubble-tooltip");
+        console.log("mouseover")
 
     }
-    var mousemove = function(d) {
+    var mouseup = function (d) {
         Tooltip
-            .html("<h5>Реализуют проект:<br>" + d.data.Partners + "</h5>")
-            .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
-            .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
+            .style("opacity", 0)
+    }
+
+    var mousemove = function(d) {
+        // Tooltip
+
 
     }
     var mouseleave = function(d) {
         Tooltip
-            .style("opacity", 0)
+        // .style("opacity", 0)
 
     }
 
@@ -89,6 +105,7 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         });
 
     node.append("circle")
+        .attr("id", guid())
         .attr("r", function(d) {
             return d.r;
         })
@@ -97,13 +114,14 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         })
         .attr("stroke", "white")
         .style("stroke-width", "2px")
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave)
+    // .on("mouseover", mouseover)
+    // .on("mousemove", mousemove)
+    // .on("mouseleave", mouseleave)
 
     ;
 
     node.append('foreignObject')
+        .attr("id", guid())
         .attr('x', function(d) {
             return - d.r * 0.75;
         })
@@ -117,8 +135,9 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
             return d.r * 1.5;
 
         })
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
+        // .on("mouseover", mouseover)
+        .on("click", mouseover)
+        //.on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
         .html(function (d,i) {
             return '<div style="width:' +
@@ -167,29 +186,7 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         .style("border", "solid")
         .style("border-width", "2px")
         .style("border-radius", "5px")
-        .style("padding", "5px")
-
-    // Three function that change the tooltip when user hover / move / leave a cell
-    var mouseover = function(d) {
-        Tooltip
-            .style("opacity", 1)
-        d3.select(this)
-            .style("stroke", "black")
-            .style("opacity", 1)
-    }
-    var mousemove = function(d) {
-        Tooltip
-            .html("The exact value of<br>this cell is: " + d.value)
-            .style("left", (d3.mouse(this)[0]+70) + "px")
-            .style("top", (d3.mouse(this)[1]) + "px")
-    }
-    var mouseleave = function(d) {
-        Tooltip
-            .style("opacity", 0)
-        d3.select(this)
-            .style("stroke", "none")
-            .style("opacity", 0.8)
-    }
+        .style("padding", "5px");
 
 
 </script>
