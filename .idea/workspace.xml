@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="811bcd5f-01ff-4c77-b111-ee1006d432e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmpl/default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tmpl/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+            <state relative-caret-position="-918">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding>
                 <element signature="e#6#221#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -34,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="60" column="15" lean-forward="true" selection-end-line="194" selection-end-column="9" />
+            <state relative-caret-position="-1025">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="e#6#221#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -48,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mod_c2cstat.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="-3493">
               <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
             </state>
           </provider>
@@ -116,6 +117,7 @@
       <find>svg</find>
       <find>data</find>
       <find>text</find>
+      <find>whi</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;option value=&quot;$1&quot;&gt;$1&lt;/option&gt;\n</replace>
@@ -141,8 +143,8 @@
         <option value="$PROJECT_DIR$/dist/js/script.js" />
         <option value="$PROJECT_DIR$/mod_c2cstat.xml" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/default.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php" />
         <option value="$PROJECT_DIR$/tmpl/default.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php" />
       </list>
     </option>
   </component>
@@ -155,12 +157,11 @@
       <path value="$PROJECT_DIR$/../../../jcb3" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="661" />
-    <option name="y" value="134" />
-    <option name="width" value="960" />
-    <option name="height" value="728" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1662" />
+    <option name="height" value="1040" />
   </component>
+  <component name="ProjectId" id="1Q0XfckRNR9Bx4YqUL3EYELZ1u2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -226,7 +227,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564148292024</updated>
       <workItem from="1564148296358" duration="9750000" />
-      <workItem from="1564408596524" duration="50351000" />
+      <workItem from="1564408596524" duration="67188000" />
     </task>
     <task id="LOCAL-00001" summary="Get data from Joomla.">
       <created>1564390023237</created>
@@ -284,18 +285,32 @@
       <option name="project" value="LOCAL" />
       <updated>1564740651416</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added tooltips with partners.">
+      <created>1564750072692</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564750072694</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Show and hide tooltip on click.">
+      <created>1565004735702</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565004735703</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60101000" />
+    <option name="totallyTimeSpent" value="76938000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="661" y="134" width="960" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.10554371" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.511745" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -324,7 +339,8 @@
     <MESSAGE value="Bubbles hierarchy." />
     <MESSAGE value="Good bubbles." />
     <MESSAGE value="Added tooltips with partners." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tooltips with partners." />
+    <MESSAGE value="Show and hide tooltip on click." />
+    <option name="LAST_COMMIT_MESSAGE" value="Show and hide tooltip on click." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/helper.php">
@@ -368,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default 2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -389,13 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mod_c2cstat.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -416,10 +418,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="60" column="15" lean-forward="true" selection-end-line="194" selection-end-column="9" />
+        <state relative-caret-position="-1025">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="e#6#221#0#PHP" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -428,10 +437,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mod_c2cstat.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3493">
+          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tmpl/default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+        <state relative-caret-position="-918">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="e#6#221#0#PHP" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />

@@ -40,11 +40,11 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         console.log(msg,sel);
     }
     dataset = {
-        "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li></ul>"},
-            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+        "children": [{"Name":"Московская электронная школа","Count":5,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li><li>Город А</li><li>Город Б</li></ul>"},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":4,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li><li>Город А</li></ul>"},
             {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
-            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
-            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":"<ul><li>Ижевск</li></ul>"}]
+            {"Name":"Субботы московского школьника","Count":2,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
+            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":""}]
 
     };
 
@@ -78,9 +78,9 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         // .style("opacity", 0)
 
     }
-
+    var chartDiv = document.getElementById("my_dataviz");
     var bubble = d3.pack(dataset)
-        .size([diameter, diameter])
+        .size([chartDiv.clientWidth, chartDiv.clientHeight])
         .padding(1.5);
 
     var svg = d3.select("#my_dataviz")
@@ -112,8 +112,10 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         .style("fill", function(d,i) {
             return color(i);
         })
-        .attr("stroke", "white")
+        .attr("stroke", "#9d9d9d")
         .style("stroke-width", "2px")
+        .style("cursor", "pointer")
+        .on("click", mouseover)
     // .on("mouseover", mouseover)
     // .on("mousemove", mousemove)
     // .on("mouseleave", mouseleave)
@@ -139,6 +141,7 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
         .on("click", mouseover)
         //.on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
+        .style("cursor", "pointer")
         .html(function (d,i) {
             return '<div style="width:' +
                 d.r * 1.5 +
