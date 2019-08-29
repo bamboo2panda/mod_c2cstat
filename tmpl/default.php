@@ -18,7 +18,23 @@ $document->addScript(JURI::root(). 'media/mod_c2cstat/script.js');
     echo '<br>';
 }
 
-*/?>
+*/
+$r = $params->get('relations');
+$s = [];
+foreach ($r as $rel){
+    $s[] = $rel->source_city;
+    echo $rel->source_city.'<br>';
+}
+$s = array_unique($s);
+
+print_r($s);
+
+
+
+
+
+//print_r(json_encode( (array)$params->get('relations')));
+?>
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
