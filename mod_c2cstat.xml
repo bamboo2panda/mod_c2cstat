@@ -243,7 +243,14 @@
 						size="50"
 						/>
 					<field
-						name="abuut"
+							name="icon"
+							type="text"
+							label="Иконка"
+							description="Icon from FontAwesome 4"
+							size="50"
+					/>
+					<field
+						name="about"
 						type="textarea"
 						label="Описание"
 						description=""

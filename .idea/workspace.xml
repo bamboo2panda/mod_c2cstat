@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="811bcd5f-01ff-4c77-b111-ee1006d432e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mod_c2cstat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mod_c2cstat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmpl/default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,27 +24,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find />
-      <find>---(.*)\n</find>
-      <find>mod_mod</find>
-      <find>mod_</find>
-      <find>MOD_MOD_</find>
-      <find>schemeSet2</find>
-      <find>x</find>
-      <find>svg</find>
-      <find>data</find>
-      <find>text</find>
-      <find>whi</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>&lt;option value=&quot;$1&quot;&gt;$1&lt;/option&gt;\n</replace>
-      <replace>mod</replace>
-      <replace>MOD_</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="module_backend" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JoomlaConfiguration" enabled="true">
@@ -87,7 +73,8 @@
       <updated>1564148292024</updated>
       <workItem from="1564148296358" duration="9750000" />
       <workItem from="1564408596524" duration="67188000" />
-      <workItem from="1566908603829" duration="1409000" />
+      <workItem from="1566908603829" duration="2355000" />
+      <workItem from="1567060506519" duration="3659000" />
     </task>
     <task id="LOCAL-00001" summary="Get data from Joomla.">
       <created>1564390023237</created>
@@ -166,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566908780214</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modefied README.md">
+      <created>1566910904494</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910904494</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +171,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -191,6 +187,7 @@
     <MESSAGE value="Added tooltips with partners." />
     <MESSAGE value="Show and hide tooltip on click." />
     <MESSAGE value="Added pointer coursor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pointer coursor." />
+    <MESSAGE value="Modefied README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modefied README.md" />
   </component>
 </project>
