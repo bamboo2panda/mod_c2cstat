@@ -23,11 +23,11 @@ $r = $params->get('relations');
 $s = [];
 foreach ($r as $rel){
     $s[] = $rel->source_city;
-    echo $rel->source_city.'<br>';
+//    echo $rel->source_city.'<br>';
 }
 $s = array_unique($s);
 
-print_r($s);
+//print_r($s);
 
 
 
@@ -55,8 +55,14 @@ print_r($s);
     function log(sel,msg) {
         console.log(msg,sel);
     }
-    dataset = {
+    let dataset = {
         "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li></ul>"},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":15,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+            {"Name":"Субботы московского школьника","Count":10,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
             {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
             {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
             {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
@@ -64,11 +70,11 @@ print_r($s);
 
     };
 
-    var diameter = 750;
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    let diameter = 750;
+    let color = d3.scaleOrdinal(d3.schemeCategory10);
 
     // Three function that change the tooltip when user hover / move / leave a cell
-    var mouseover = function(d) {
+    let mouseover = function(d) {
         Tooltip.style("opacity") === "1" ? Tooltip.style("opacity", 0):
             Tooltip
                 .style("opacity", 1)
@@ -79,12 +85,12 @@ print_r($s);
         console.log("mouseover")
 
     }
-    var mouseup = function (d) {
+    let mouseup = function (d) {
         Tooltip
             .style("opacity", 0)
     }
 
-    var mousemove = function(d) {
+    let mousemove = function(d) {
         // Tooltip
 
 
@@ -95,30 +101,26 @@ print_r($s);
 
     }
 
-    var bubble = d3.pack(dataset)
+    let bubble = d3.pack(dataset)
         .size([diameter, diameter])
         .padding(1.5);
 
-    var svg = d3.select("#my_dataviz")
+    let svg = d3.select("#my_dataviz")
         .append("svg")
         .attr("width", diameter)
         .attr("height", diameter)
         .attr("class", "bubble");
 
-    var nodes = d3.hierarchy(dataset)
+    let nodes = d3.hierarchy(dataset)
         .sum(function(d) { return d.Count; });
 
-    var node = svg.selectAll(".node")
+    let node = svg.selectAll("node")
         .data(bubble(nodes).descendants())
         .enter()
-        .filter(function(d){
-            return  !d.children
-        })
+        .filter((d)=> !d.children)
         .append("g")
         .attr("class", "node")
-        .attr("transform", function(d) {
-            return "translate(" + d.x + "," + d.y + ")";
-        });
+        .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
 
     node.append("circle")
         .attr("id", guid())
@@ -129,6 +131,7 @@ print_r($s);
             return color(i);
         })
         .attr("stroke", "white")
+        .attr("transition", "1500")
         .style("stroke-width", "2px")
     // .on("mouseover", mouseover)
     // .on("mousemove", mousemove)
@@ -177,25 +180,8 @@ print_r($s);
     d3.select(self.frameElement)
         .style("height", diameter + "px");
 
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-    var bubble = d3.pack(dataset)
-        .size([diameter, diameter])
-        .padding(1.5);
-
-    var node = svg.selectAll(".node")
-        .data(bubble(nodes).descendants())
-        .enter()
-        .filter(function(d){
-            return  !d.children
-        })
-        .append("g")
-        .attr("class", "node")
-        .attr("transform", function(d) {
-            return "translate(" + d.x + "," + d.y + ")";
-        });
     // create a tooltip
-    var Tooltip = d3.select("#my_dataviz")
+    let Tooltip = d3.select("#my_dataviz")
         .append("div")
         .style("opacity", 0)
         .attr("class", "tooltip")
@@ -204,6 +190,5 @@ print_r($s);
         .style("border-width", "2px")
         .style("border-radius", "5px")
         .style("padding", "5px");
-
 
 </script>
