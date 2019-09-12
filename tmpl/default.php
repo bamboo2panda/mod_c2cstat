@@ -43,7 +43,11 @@ $s = array_unique($s);
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+<div class="uk-grid">
+    <div class="uk-width-medium-4-5" id="draw-panel">
+    </div>
+    <div class="uk-width-medium-1-5" id="control-panel"></div>
+</div>
 <script type="text/javascript">
     function guid() {
         function _p8(s) {
@@ -53,18 +57,37 @@ $s = array_unique($s);
         return _p8() + _p8(true) + _p8(true) + _p8();
     }
 
+    /*
+        let cityData = {
+            "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li></ul>"},
+                {"Name":"Образовательное телевидение (МособрТВ)","Count":15,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+                {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+                {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
+                {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+                {"Name":"Менторинг в системе образования","Count":3,"City":"Ижевск","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+                {"Name":"Субботы московского школьника","Count":10,"City":"Сочи","Partners":"<ul><li>Тюмень</li></ul>"},
+                {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
+                {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
+                {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
+                {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":"<ul><li>Ижевск</li></ul>"}]
+
+        };
+    */
+
+
+
     let cityData = {
-        "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Пермь</li></ul>"},
-            {"Name":"Образовательное телевидение (МособрТВ)","Count":15,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
-            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
-            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
-            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
-            {"Name":"Менторинг в системе образования","Count":3,"City":"Ижевск","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
-            {"Name":"Субботы московского школьника","Count":10,"City":"Сочи","Partners":"<ul><li>Тюмень</li></ul>"},
-            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Каспийск</li></ul>"},
-            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":"<ul><li>Ижевск</li><li>Сочи</li></ul>"},
-            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":"<ul><li>Тюмень</li></ul>"},
-            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":"<ul><li>Ижевск</li></ul>"}]
+        "children": [{"Name":"Московская электронная школа","Count":3,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Пермь"}]},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":15,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Каспийск"}]},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Сочи"}]},
+            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":[{"name":"Тюмень"}]},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Каспийск"}]},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Ижевск","Partners":[{"name":"Ижевск"},{"name":"Сочи"}]},
+            {"Name":"Субботы московского школьника","Count":10,"City":"Сочи","Partners":[{"name":"Тюмень"}]},
+            {"Name":"Образовательное телевидение (МособрТВ)","Count":2,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Каспийск"}]},
+            {"Name":"Менторинг в системе образования","Count":3,"City":"Москва","Partners":[{"name":"Ижевск"},{"name":"Сочи"}]},
+            {"Name":"Субботы московского школьника","Count":3,"City":"Москва","Partners":[{"name":"Тюмень"}]},
+            {"Name":"Обучение слепых детей в обычных классах","Count":1,"City":"Ижевск","Partners":[{"name":"Ижевск"}]}]
 
     };
 
@@ -78,20 +101,18 @@ $s = array_unique($s);
         if (document.getElementById("bubble")) {
             document.getElementById("bubble").remove()
         }
-
-
-
         if (selectedCity) {
             dataset['children'] = dataset['children'].filter(function (i) {
                 return i['City'] === selectedCity;
-            })
+            });
             console.log (dataset)
         }
         let mouseover = function(d) {
             Tooltip.style("opacity") === "1" ? Tooltip.style("opacity", 0):
                 Tooltip
                     .style("opacity", 1)
-                    .html("<h5>Реализуют проект:<br>" + d.data.Partners + "</h5>")
+                    // TODO Change map sign from , to <ul><li>
+                    .html("<h5>Реализуют проект:<br>" + d.data.Partners.map(x => x.name + '<br/>') + "</h5>")
                     .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
                     .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
                     .style("class", "bubble-tooltip");
@@ -103,25 +124,24 @@ $s = array_unique($s);
                 .style("opacity", 0)
         }
 
+
         var mouseleave = function(d) {
             Tooltip
             // .style("opacity", 0)
-
         }
 
-        let diameter = 750;
+        let diameter = 1000;
         let color = d3.scaleOrdinal(d3.schemeCategory10);
-
         let bubble = d3.pack(dataset)
-            .size([diameter, diameter])
+            .size([diameter, diameter/2])
             .padding(1.5);
 
         console.log(bubble)
 
-        let svg = d3.select("#my_dataviz")
+        let svg = d3.select("#draw-panel")
             .append("svg")
             .attr("width", diameter)
-            .attr("height", diameter)
+            .attr("height", diameter / 2)
             .attr("class", "bubble")
             .attr("id", "bubble");
 
@@ -135,7 +155,6 @@ $s = array_unique($s);
             .append("g")
             .attr("class", "node")
             .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
-
 
         node.append("circle")
             .attr("id", guid())
@@ -186,10 +205,10 @@ $s = array_unique($s);
             });
 
         d3.select(self.frameElement)
-            .style("height", diameter + "px");
+            .style("height", diameter/2 + "px");
 
         // create a tooltip
-        let Tooltip = d3.select("#my_dataviz")
+        let Tooltip = d3.select("#draw-panel")
             .append("div")
             .style("opacity", 0)
             .attr("class", "tooltip")
@@ -198,12 +217,7 @@ $s = array_unique($s);
             .style("border-width", "2px")
             .style("border-radius", "5px")
             .style("padding", "5px");
-
-
-
-
     }
-
     function makeCityFilter(){
         let uniqCities =  function () {
             function onlyUnique(value, index, self) {
@@ -223,18 +237,18 @@ $s = array_unique($s);
             uniqCities().forEach(function (item) {
                 $('<option />', {value: item, text: item}).appendTo(cityList);
             })
-            cityList.appendTo('#my_dataviz');
+            cityList.appendTo('#control-panel');
         })(jQuery);
-
     }
+
     function updateSVG(selectedCity){
         console.log(selectedCity.value)
-        makeChart(cityData, selectedCity.value);
+        if (selectedCity.value !== 'Все'){
+            makeChart(cityData, selectedCity.value);
+        }else {
+            makeChart(cityData);
+        }
     }
-
-
     makeChart(cityData)
-
-
 
 </script>
