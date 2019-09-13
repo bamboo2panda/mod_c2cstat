@@ -92,7 +92,7 @@ defined('_JEXEC') or die;
             }
             if (selectedCity) {
                 dataset['children'] = dataset['children'].filter(function (i) {
-                    return i['City'] === selectedCity;
+                    return selectedCity.includes(i['City']);
                 });
                 console.log (dataset)
             }
@@ -247,10 +247,9 @@ defined('_JEXEC') or die;
 
         function updateSVG(selectedCity){
             (function($){
-
                 console.log($("#cityListSelect").val())
                 if (selectedCity.name){
-                    makeChart(cityData, selectedCity.name);
+                    makeChart(cityData, $("#cityListSelect").val());
                 }else {
                     makeChart(cityData);
                 }
@@ -259,3 +258,5 @@ defined('_JEXEC') or die;
 
 
     </script>
+
+
