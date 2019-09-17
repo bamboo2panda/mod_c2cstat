@@ -42,6 +42,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "18",
                 "Link": "#",
+                "id": "1",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Владимир"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Тверь"}, {"name": "Сочи"}, {"name": "Волгоград"}]
             },
 
@@ -50,6 +52,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "20",
                 "Link": "#",
+                "id": "2",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Барнаул"}, {"name": "Екатеринбург"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Краснодар"}, {"name": "Магнитогорск"}, {"name": "Новомосковск"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Тверь"}, {"name": "Томск"}, {"name": "Уфа"}, {"name": "Якутск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
             {
@@ -57,13 +61,17 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "17",
                 "Link": "#",
+                "id": "3",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Владимир"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Магнитогорск"}, {"name": "Новомосковск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Салават"}, {"name": "Сочи"}, {"name": "Тверь"}, {"name": "Тамбов"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
             {
-                "Name": "Реализация управленческих проектов в деятельности руководителей и управленческих команд образовательных организаций",
+                "Name": "Управленческий проект",
                 "City": "Москва",
                 "Count": "20",
                 "Link": "#",
+                "id": "4",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Выборг"}, {"name": "Екатеринбург"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Новомосковск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Сочи"}, {"name": "Тверь"}, {"name": "Томск"}, {"name": "Волгоград"}]
             },
             {
@@ -71,6 +79,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "8",
                 "Link": "#",
+                "id": "5",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Барнаул"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Иваново"}, {"name": "Саранск"}]
             },
             {
@@ -78,62 +88,78 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "6",
                 "Link": "#",
+                "id": "6",
+                "Category": "",
                 "Partners": [{"name": "Архангельск"}, {"name": "Омск"}, {"name": "Тверь"}, {"name": "Якутск"}, {"name": "Омск"}, {"name": "Тверь"}]
             },
 
             {
-                "Name": "Городской проект \"Московская электронная школа\"",
+                "Name": "\"Московская электронная школа\"",
                 "City": "Москва",
                 "Count": "9",
                 "Link": "#",
+                "id": "7",
+                "Category": "",
                 "Partners": [{"name": "Балаково"}, {"name": "Братск"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Орел"}, {"name": "Тамбов"}, {"name": "Улан-Удэ"}, {"name": "Волгоград"}]
             },
 
             {
-                "Name": "Городской проект \"Инженерный класс в московской школе\"",
+                "Name": "\"Инженерный класс в московской школе\"",
                 "City": "Москва",
                 "Count": "10",
                 "Link": "#",
+                "id": "8",
+                "Category": "",
                 "Partners": [{"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Тверь"}, {"name": "Нефтеюганск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
             {
-                "Name": "Городской проект \"Медицинский класс в московской школе\"",
+                "Name": "\"Медицинский класс в московской школе\"",
                 "City": "Москва",
                 "Count": "7",
                 "Link": "#",
+                "id": "9",
+                "Category": "",
                 "Partners": [{"name": "Барнаул,Белгород"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Тверь"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
             {
-                "Name": "Городской проект \"Кадетский класс в московской школе\"",
+                "Name": "\"Кадетский класс в московской школе\"",
                 "City": "Москва",
                 "Count": "17",
                 "Link": "#",
+                "id": "10",
+                "Category": "",
                 "Partners": [{"name": "Барнаул"}, {"name": "Белгород"}, {"name": "Бийск"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Нефтеюганск"}, {"name": "Новомосковск"}, {"name": "Салават"}, {"name": "Тверь"}, {"name": "Челябинск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
             {
-                "Name": "Городской проект \"Субботы московского школьника\"",
+                "Name": "\"Субботы московского школьника\"",
                 "City": "Москва",
                 "Count": "8",
                 "Link": "#",
+                "id": "11",
+                "Category": "",
                 "Partners": [{"name": "Барнаул"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Орел"}, {"name": "Салават"}]
             },
 
             {
-                "Name": "Городской проект \"Математическая вертикаль\"",
+                "Name": "\"Математическая вертикаль\"",
                 "City": "Москва",
                 "Count": "3",
                 "Link": "#",
+                "id": "12",
+                "Category": "",
                 "Partners": [{"name": "Белгород"}, {"name": "Магнитогорск"}, {"name": "Саранск"}]
             },
 
             {
-                "Name": "Городской проект \"Академический (научно-технологический) класс в московской школе\"",
+                "Name": "\"Академический (научно-технологический) класс в московской школе\"",
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
+                "id": "13",
+                "Category": "",
                 "Partners": [{"name": "Братск"}, {"name": "Кемерово"}]
             },
 
@@ -142,22 +168,28 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "3",
                 "Link": "#",
+                "id": "14",
+                "Category": "",
                 "Partners": [{"name": "Братск"}, {"name": "Ижевск"}, {"name": "Якутск"}]
             },
 
             {
-                "Name": "Опыт Москвы в подготовке победителей \"JuniorSkills Russia\"",
+                "Name": "Подготовка победителей \"JuniorSkills Russia\"",
                 "City": "Москва",
                 "Count": "4",
                 "Link": "#",
+                "id": "15",
+                "Category": "",
                 "Partners": [{"name": "Ижевск"}, {"name": "Новомосковск"}, {"name": "Петрозаводск"}, {"name": "Саратов"}]
             },
 
             {
-                "Name": "Опыт Москвы в подготовке победителей Национального чемпионата \"Абилимпикс\"",
+                "Name": "Подготовка победителей Национального чемпионата \"Абилимпикс\"",
                 "City": "Москва",
                 "Count": "3",
                 "Link": "#",
+                "id": "16",
+                "Category": "",
                 "Partners": [{"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Петрозаводск"}]
             },
 
@@ -166,13 +198,17 @@ defined('_JEXEC') or die;
                 "City": "Сочи",
                 "Count": "3",
                 "Link": "#",
+                "id": "17",
+                "Category": "",
                 "Partners": [{"name": "Новороссийск"}, {"name": "Краснодар"}, {"name": "Тольятти"}]
             },
             {
-                "Name": "Городской проект \"Классный руководитель - руководитель класса\"",
+                "Name": "\"Классный руководитель - руководитель класса\"",
                 "City": "Москва",
                 "Count": "4",
                 "Link": "#",
+                "id": "18",
+                "Category": "",
                 "Partners": [{"name": "Магнитогорск"}, {"name": "Саратов"}, {"name": "Тамбов"}, {"name": "Тверь"}]
             },
             {
@@ -180,6 +216,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "5",
                 "Link": "#",
+                "id": "19",
+                "Category": "",
                 "Partners": [{"name": "Архагельск"}, {"name": "Улан-Удэ"}, {"name": "Кемерово"}, {"name": "Грозный"}, {"name": "Новосибирск"}]
             },
             {
@@ -187,22 +225,28 @@ defined('_JEXEC') or die;
                 "City": "Сочи",
                 "Count": "1",
                 "Link": "#",
+                "id": "20",
+                "Category": "",
                 "Partners": [{"name": "Краснодар"}]
             },
 
             {
                 "Name": "Проект \"Растим будущих инженеров\"",
-                "City": "Сургут, Тюмень, Москва, Челябинск, Ижевск, Казань",
+                "City": "Казань",
                 "Count": "1",
                 "Link": "#",
+                "id": "21",
+                "Category": "",
                 "Partners": [{"name": "Уфа"}]
             },
 
             {
                 "Name": "Ресурсный центр инклюзивного образования",
-                "City": "Самара, Псков",
+                "City": "Самара",
                 "Count": "1",
                 "Link": "#",
+                "id": "22",
+                "Category": "",
                 "Partners": [{"name": "Уфа"}]
             },
 
@@ -211,6 +255,8 @@ defined('_JEXEC') or die;
                 "City": "Омск",
                 "Count": "1",
                 "Link": "#",
+                "id": "23",
+                "Category": "",
                 "Partners": [{"name": "Уфа"}]
             },
 
@@ -220,22 +266,28 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
+                "id": "24",
+                "Category": "",
                 "Partners": [{"name": "Омск"}, {"name": "Тверь"}]
             },
 
             {
-                "Name": "Опыт Москвы в подготовке победителей Всероссийской олимпиады профессионального мастерства",
+                "Name": "Подготовка победителей Всероссийской олимпиады профессионального мастерства",
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
+                "id": "25",
+                "Category": "",
                 "Partners": [{"name": "Петрозаводск"}, {"name": "Смоленск"}]
             },
 
             {
-                "Name": "Опыт Москвы в подготовке победителей чемпионата \"WorldSkills Russia\"",
+                "Name": "Подготовка победителей чемпионата \"WorldSkills Russia\"",
                 "City": "Москва",
                 "Count": "1",
                 "Link": "#",
+                "id": "26",
+                "Category": "",
                 "Partners": [{"name": "Петрозаводск"}]
             },
 
@@ -250,6 +302,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
+                "id": "27",
+                "Category": "",
                 "Partners": [{"name": "Ижевск"}, {"name": "Балаково"}]
             },
 
@@ -258,6 +312,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "1",
                 "Link": "#",
+                "id": "28",
+                "Category": "",
                 "Partners": [{"name": "Сочи"}]
             },
             {
@@ -265,6 +321,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "1",
                 "Link": "#",
+                "id": "",
+                "Category": "",
                 "Partners": [{"name": "Сочи"}
                 ]
             },
@@ -273,6 +331,8 @@ defined('_JEXEC') or die;
                 "City": "Брянск",
                 "Count": "1",
                 "Link": "#",
+                "id": "29",
+                "Category": "",
                 "Partners": [{"name": "Сочи"}]
             },
             {
@@ -280,6 +340,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "1",
                 "Link": "#",
+                "id": "30",
+                "Category": "",
                 "Partners": [{"name": "Ульяновск"}]
             },
 
@@ -288,6 +350,8 @@ defined('_JEXEC') or die;
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
+                "id": "31",
+                "Category": "",
                 "Partners": [{"name": "Новомосковск"}, {"name": "Уфа"}]
             },
 
@@ -297,6 +361,8 @@ defined('_JEXEC') or die;
                 "City": "Балаково",
                 "Count": "2",
                 "Link": "#",
+                "id": "32",
+                "Category": "",
                 "Partners": [{"name": "Выборг"}, {"name": "Ижевск"}]
             },
 
@@ -305,6 +371,8 @@ defined('_JEXEC') or die;
                 "City": "Белгород",
                 "Count": "1",
                 "Link": "#",
+                "id": "33",
+                "Category": "",
                 "Partners": [{"name": "Южно-Сахалинск"}]
             },
 
@@ -315,6 +383,8 @@ defined('_JEXEC') or die;
                 "City": "Самара",
                 "Count": "1",
                 "Link": "#",
+                "id": "34",
+                "Category": "",
                 "Partners": [{"name": "Белгород"}]
             },
 
@@ -323,6 +393,8 @@ defined('_JEXEC') or die;
                 "City": "Екатеринбург",
                 "Count": "1",
                 "Link": "#",
+                "id": "35",
+                "Category": "",
                 "Partners": [{"name": "Белгород"}]
             },
 
@@ -331,6 +403,8 @@ defined('_JEXEC') or die;
                 "City": "Магнитогорск",
                 "Count": "1",
                 "Link": "#",
+                "id": "36",
+                "Category": "",
                 "Partners": [{"name": "Челябинская область"}]
             },
 
@@ -339,15 +413,18 @@ defined('_JEXEC') or die;
                 "City": "Челябинск",
                 "Count": "1",
                 "Link": "#",
+                "id": "37",
+                "Category": "",
                 "Partners": [{"name": "Магнитогорск"}]
             },
 
             {
-                "Name":
-                    "Партнерство ВУЗа и школы как возможный путь повышения эффективности профориентационной работы среди старшеклассников",
+                "Name":"Партнерство ВУЗа и школы как возможный путь повышения эффективности профориентационной работы среди старшеклассников",
                 "City": "Красноярск",
                 "Count": "1",
                 "Link": "#",
+                "id": "38",
+                "Category": "",
                 "Partners": [{"name": "Волгоград"}]
             }
         ]
@@ -355,9 +432,11 @@ defined('_JEXEC') or die;
     let cityFilters = [];
     cityFilters['creators'] = [];
     cityFilters['participants'] = [];
+    cityFilters['category'] = [];
     let middleCounter = 10;
     makeCreatorCityFilter();
     makeParticipantCityFilter();
+    makeCategoryFilter();
     makeChart(cityData, cityFilters);
 
     function guid() {
@@ -368,25 +447,79 @@ defined('_JEXEC') or die;
         return _p8() + _p8(true) + _p8(true) + _p8();
     }
     function makeChart(data, filters){
-        let dataset = Object.assign({},data);
         if (document.getElementById("bubble")) {
             document.getElementById("bubble").remove()
         }
-        if (filters['creators'] !== null && filters['creators'].length > 0) {
+        let dataset = Object.assign({},data);
+
+        dataset['children'].forEach(function (item, i, arr) {
+            if (filters['creators'] !== null && filters['creators'].length > 0 || filters['participants'] !== null && filters['participants'].length > 0  || filters['category'] !== null && filters['category'].length > 0) {
+                let partnersArray = Object.values(item['Partners']).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
+                item['Opacity']  = 0.1
+
+                if (filters['creators'].includes(item['City']) && filters['participants'].filter(value => partnersArray.includes(value)).length > 0 && filters['category'].includes(item['Category'])){
+                    item['Opacity'] = 1
+                    console.log ('Creators')
+                    console.log (item['City'])
+                }
+                // if (filters['participants'].filter(value => partnersArray.includes(value)).length > 0){
+                //     item['Opacity'] = 1
+                //     console.log ('Participants')
+                //     console.log (item['City'])
+                // }
+                // if (filters['category'].includes(item['Category'])){
+                //     item['Opacity']  = 1
+                // }
+
+
+            }
+            if (filters['creators'].length === 0 && filters['participants'].length === 0 && filters['category'].length === 0){
+                item['Opacity']  = 1
+            }
+
+
+        })
+        console.log("filters")
+        console.log(filters)
+
+        /*if (filters['creators'] !== null && filters['creators'].length > 0) {
             dataset['children'] = dataset['children'].filter(function (i) {
-                return filters['creators'].includes(i['City']);
+                if (filters['creators'].includes(i['City'])){
+                    dataset['children'][i['id']].Opacity  = 1
+                    console.log ('Creators')
+                    console.log (i['City'])
+                }
+                else {
+                    dataset['children'][i['id']].Opacity  = 0.5
+                };
+                return true;
+
             });
         }
         if (filters['participants'] !== null && filters['participants'].length > 0 ){
             dataset['children'] = dataset['children'].filter(function (i) {
                 let partnersArray = Object.values(i['Partners']).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
                 if (filters['participants'].filter(value => partnersArray.includes(value)).length > 0){
-                    return true
+                    dataset['children'][i]['Opacity'] = 1
                 }else{
-                    return false
+                    dataset['children'][i]['Opacity'] = 0.5
                 }
+                return true;
+
             });
         }
+        if (filters['category'] !== null && filters['category'].length > 0) {
+            dataset['children'] = dataset['children'].filter(function (i) {
+                if (filters['category'].includes(i['Category'])){
+                    i['Opacity']  = 1
+                }else{
+                    i['Opacity']  = 0.5
+                };
+                return true;
+            });
+        }*/
+        console.log("dataset")
+        console.log(dataset)
         let mouseclick = function(d) {
             if (Tooltip.style("opacity") === "1") {
                 Tooltip
@@ -424,6 +557,8 @@ defined('_JEXEC') or die;
             .enter()
             .filter((d)=> !d.children)
             .append("g")
+            // .style("opacity", 1)
+            .style("opacity", (d)=> d.data.Opacity)
             .attr("class", "node")
             .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
         node.append("circle")
@@ -497,10 +632,12 @@ defined('_JEXEC') or die;
         };
 
         (function($){
+            let cityListName = $('<h5/>',{text:'Город-транслятор'});
             let cityList = $('<select/>',{id:'cityCreatorListSelect', class:'js-example-basic-multiple',name: '[]', multiple:"multiple", onChange:'updateCreatorCityFilter()', style:'margin-bottom: 10px;'});
             uniqCities().forEach(function (item) {
                 $('<option />', {value: item, text: item}).appendTo(cityList);
             })
+            cityListName.appendTo('#control-panel')
             cityList.appendTo('#control-panel');
             $('#cityCreatorListSelect').select2();
         })(jQuery);
@@ -516,16 +653,42 @@ defined('_JEXEC') or die;
             }
             let u = cities.reduce((a, b) => a.concat(b), []).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
             u = u.filter(onlyUnique)
-             return u
+            return u
         };
 
         (function($){
+            let cityListName = $('<h5/>',{text:'Город-пользователь'});
             let cityList = $('<select/>',{id:'cityParticipantListSelect', class:'js-example-basic-multiple',name: '[]', multiple:"multiple", onChange:'updateParticipantCityFilter()'});
             uniqCities().forEach(function (item) {
                 $('<option />', {value: item, text: item}).appendTo(cityList);
             })
+            cityListName.appendTo('#control-panel')
             cityList.appendTo('#control-panel');
             $('#cityParticipantListSelect').select2();
+        })(jQuery);
+    }
+    function makeCategoryFilter(){
+        let uniqCategories =  function () {
+            function onlyUnique(value, index, self) {
+                return self.indexOf(value) === index;
+            }
+            let categories = []
+            for (let v in cityData['children']){
+                categories.push(cityData['children'][v]['Category'])
+            }
+            let u = categories.filter(onlyUnique);
+            return u
+        };
+
+        (function($){
+            let categoryistName = $('<h5/>',{text:'Направления'});
+            let categoryList = $('<select/>',{id:'categorySelect', class:'js-example-basic-multiple',name: '[]', multiple:"multiple", onChange:'updateCategoryFilter()', style:'margin-bottom: 10px;'});
+            uniqCategories().forEach(function (item) {
+                $('<option />', {value: item, text: item}).appendTo(categoryList);
+            })
+            categoryistName.appendTo('#control-panel')
+            categoryList.appendTo('#control-panel');
+            $('#categorySelect').select2();
         })(jQuery);
     }
     function updateCreatorCityFilter(){
@@ -549,6 +712,15 @@ defined('_JEXEC') or die;
             makeChart(cityData, cityFilters)
         })(jQuery);
     }
+    function updateCategoryFilter(){
+        (function($){
+            if ($("#cityCategoryListSelect").val() !== null) {
+                cityFilters['category'] = $("#cityCategoryListSelect").val()
+            }else{
+                cityFilters['category'] = []
+            }
+            makeChart(cityData, cityFilters)
+        })(jQuery);
+    }
 </script>
-
 
