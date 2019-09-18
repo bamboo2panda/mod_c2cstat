@@ -23,7 +23,7 @@ defined('_JEXEC') or die;
 <!-- Load color scale -->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://test1.mioo.ru/media/mod_c2cstat/js/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
+<h3 style="text-align: center; padding-left: 200px; padding-right: 200px;">В разделе представлена инфографика о городах-участниках проекта &laquo;Взаимообучение городов&raquo;, которые транслируют эффективные практики в системе образования и города, которые применяют их в своей деятельности</h3>
 <!-- Create a div where the graph will take place -->
 <div class="uk-grid">
     <div class="uk-width-medium-4-5" id="draw-panel">
@@ -32,28 +32,36 @@ defined('_JEXEC') or die;
         <div class="uk-panel uk-panel-box"><div id="control-panel"></div>
         </div>
     </div>
+
+</div>
+<!-- This is the modal -->
+<div id="contactForm" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Обратная связь</h2>
+        <button class="uk-modal-close" type="button"></button>
+    </div>
 </div>
 <script type="text/javascript">
     let cityData = {
         "children": [
 
-            {
-                "Name": "Рейтингование образовательных организаций",
-                "City": "Москва",
-                "Count": "18",
-                "Link": "#",
-                "id": "1",
-                "Category": "",
-                "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Владимир"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Тверь"}, {"name": "Сочи"}, {"name": "Волгоград"}]
-            },
+            // {
+            //     "Name": "Рейтингование образовательных организаций",
+            //     "City": "Москва",
+            //     "Count": "18",
+            //     "Link": "#",
+            //     "id": "1",
+            //     "Category": "Подготовка управленческих кадров",
+            //     "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Владимир"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Тверь"}, {"name": "Сочи"}, {"name": "Волгоград"}]
+            // },
 
             {
-                "Name": "Аттестация руководителей образовательных организаций",
+                "Name": "Система аттестации руководителей образовательных организаций",
                 "City": "Москва",
                 "Count": "20",
                 "Link": "#",
                 "id": "2",
-                "Category": "",
+                "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Архангельск"}, {"name": "Барнаул"}, {"name": "Екатеринбург"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Краснодар"}, {"name": "Магнитогорск"}, {"name": "Новомосковск"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Тверь"}, {"name": "Томск"}, {"name": "Уфа"}, {"name": "Якутск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
             {
@@ -62,7 +70,7 @@ defined('_JEXEC') or die;
                 "Count": "17",
                 "Link": "#",
                 "id": "3",
-                "Category": "",
+                "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Владимир"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Магнитогорск"}, {"name": "Новомосковск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Салават"}, {"name": "Сочи"}, {"name": "Тверь"}, {"name": "Тамбов"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
             {
@@ -71,8 +79,17 @@ defined('_JEXEC') or die;
                 "Count": "20",
                 "Link": "#",
                 "id": "4",
-                "Category": "",
+                "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Выборг"}, {"name": "Екатеринбург"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Новомосковск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Сочи"}, {"name": "Тверь"}, {"name": "Томск"}, {"name": "Волгоград"}]
+            },
+            {
+                "Name": "Формирование крупных образовательных комплексов ",
+                "City": "Москва",
+                "Count": "20",
+                "Link": "#",
+                "id": "4",
+                "Category": "Интеграция образовательных ресурсов",
+                "Partners": [{"name": "Архангельск"}, {"name": "Белгород"}, {"name": "Барнаул"}, {"name": "Выборг"}, {"name": "Екатеринбург"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Нефтеюганск"}, {"name": "Новомосковск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Саратов"}, {"name": "Салават"}, {"name": "Тверь"}, {"name": "Челябинск"}, {"name": "Якутск"}, {"name": "Волгоград"}]
             },
             {
                 "Name": "Московская олимпиада школьников",
@@ -80,8 +97,17 @@ defined('_JEXEC') or die;
                 "Count": "8",
                 "Link": "#",
                 "id": "5",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Архангельск"}, {"name": "Барнаул"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Иваново"}, {"name": "Саранск"}]
+            },
+            {
+                "Name": "Ресурсный класс",
+                "City": "Москва",
+                "Count": "2",
+                "Link": "#",
+                "id": "55",
+                "Category": "Инклюзивная среда",
+                "Partners": [{"name": "Новомосковск"}, {"name": "Уфа"}]
             },
             {
                 "Name": "Олимпиада \"История и культура храмов столицы\"",
@@ -89,17 +115,17 @@ defined('_JEXEC') or die;
                 "Count": "6",
                 "Link": "#",
                 "id": "6",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Архангельск"}, {"name": "Омск"}, {"name": "Тверь"}, {"name": "Якутск"}, {"name": "Омск"}, {"name": "Тверь"}]
             },
 
             {
-                "Name": "\"Московская электронная школа\"",
+                "Name": "Мегарпроект \"Московская электронная школа\"",
                 "City": "Москва",
                 "Count": "9",
                 "Link": "#",
                 "id": "7",
-                "Category": "",
+                "Category": "Московская электронная школа",
                 "Partners": [{"name": "Балаково"}, {"name": "Братск"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Орел"}, {"name": "Тамбов"}, {"name": "Улан-Удэ"}, {"name": "Волгоград"}]
             },
 
@@ -109,7 +135,7 @@ defined('_JEXEC') or die;
                 "Count": "10",
                 "Link": "#",
                 "id": "8",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Тверь"}, {"name": "Нефтеюганск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
@@ -119,7 +145,7 @@ defined('_JEXEC') or die;
                 "Count": "7",
                 "Link": "#",
                 "id": "9",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Барнаул,Белгород"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Тверь"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
@@ -129,7 +155,7 @@ defined('_JEXEC') or die;
                 "Count": "17",
                 "Link": "#",
                 "id": "10",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Барнаул"}, {"name": "Белгород"}, {"name": "Бийск"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Нефтеюганск"}, {"name": "Новомосковск"}, {"name": "Салават"}, {"name": "Тверь"}, {"name": "Челябинск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
 
@@ -139,9 +165,10 @@ defined('_JEXEC') or die;
                 "Count": "8",
                 "Link": "#",
                 "id": "11",
-                "Category": "",
+                "Category": "Дополнительное образование",
                 "Partners": [{"name": "Барнаул"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Орел"}, {"name": "Салават"}]
             },
+
 
             {
                 "Name": "\"Математическая вертикаль\"",
@@ -149,7 +176,7 @@ defined('_JEXEC') or die;
                 "Count": "3",
                 "Link": "#",
                 "id": "12",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Белгород"}, {"name": "Магнитогорск"}, {"name": "Саранск"}]
             },
 
@@ -159,7 +186,7 @@ defined('_JEXEC') or die;
                 "Count": "2",
                 "Link": "#",
                 "id": "13",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Братск"}, {"name": "Кемерово"}]
             },
 
@@ -169,7 +196,7 @@ defined('_JEXEC') or die;
                 "Count": "3",
                 "Link": "#",
                 "id": "14",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Братск"}, {"name": "Ижевск"}, {"name": "Якутск"}]
             },
 
@@ -179,7 +206,7 @@ defined('_JEXEC') or die;
                 "Count": "4",
                 "Link": "#",
                 "id": "15",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Ижевск"}, {"name": "Новомосковск"}, {"name": "Петрозаводск"}, {"name": "Саратов"}]
             },
 
@@ -189,7 +216,7 @@ defined('_JEXEC') or die;
                 "Count": "3",
                 "Link": "#",
                 "id": "16",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Петрозаводск"}]
             },
 
@@ -199,7 +226,7 @@ defined('_JEXEC') or die;
                 "Count": "3",
                 "Link": "#",
                 "id": "17",
-                "Category": "",
+                "Category": "Дополнительное образование",
                 "Partners": [{"name": "Новороссийск"}, {"name": "Краснодар"}, {"name": "Тольятти"}]
             },
             {
@@ -208,7 +235,7 @@ defined('_JEXEC') or die;
                 "Count": "4",
                 "Link": "#",
                 "id": "18",
-                "Category": "",
+                "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Магнитогорск"}, {"name": "Саратов"}, {"name": "Тамбов"}, {"name": "Тверь"}]
             },
             {
@@ -221,12 +248,12 @@ defined('_JEXEC') or die;
                 "Partners": [{"name": "Архагельск"}, {"name": "Улан-Удэ"}, {"name": "Кемерово"}, {"name": "Грозный"}, {"name": "Новосибирск"}]
             },
             {
-                "Name": "Дошкольная образовательная организация как центр социокультурного партнерства  в работе с детьми, охваченными и не охваченными дошкольным образованием",
+                "Name": "Социальное партнерство в дошкольном образовании",
                 "City": "Сочи",
                 "Count": "1",
                 "Link": "#",
                 "id": "20",
-                "Category": "",
+                "Category": "Дошкольное образование",
                 "Partners": [{"name": "Краснодар"}]
             },
 
@@ -236,7 +263,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "21",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Уфа"}]
             },
 
@@ -246,7 +273,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "22",
-                "Category": "",
+                "Category": "Инклюзивное образования",
                 "Partners": [{"name": "Уфа"}]
             },
 
@@ -256,7 +283,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "23",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Уфа"}]
             },
 
@@ -267,7 +294,7 @@ defined('_JEXEC') or die;
                 "Count": "2",
                 "Link": "#",
                 "id": "24",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Омск"}, {"name": "Тверь"}]
             },
 
@@ -277,7 +304,7 @@ defined('_JEXEC') or die;
                 "Count": "2",
                 "Link": "#",
                 "id": "25",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Петрозаводск"}, {"name": "Смоленск"}]
             },
 
@@ -287,7 +314,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "26",
-                "Category": "",
+                "Category": "Выявление и развитие талантов",
                 "Partners": [{"name": "Петрозаводск"}]
             },
 
@@ -296,14 +323,14 @@ defined('_JEXEC') or die;
             //     "City": "Москва",
             //     "Partners": [{"name": "Якутск"}, {"name": "Омск"}, {"name": "Тверь"}]
             // },
-
+            //
             {
                 "Name": "Взаимообучение школ",
                 "City": "Москва",
                 "Count": "2",
                 "Link": "#",
                 "id": "27",
-                "Category": "",
+                "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Ижевск"}, {"name": "Балаково"}]
             },
 
@@ -313,26 +340,26 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "28",
-                "Category": "",
+                "Category": "Начальное образование",
                 "Partners": [{"name": "Сочи"}]
             },
-            {
-                "Name": "Директорские  субботы",
-                "City": "Москва",
-                "Count": "1",
-                "Link": "#",
-                "id": "",
-                "Category": "",
-                "Partners": [{"name": "Сочи"}
-                ]
-            },
+            // {
+            //     "Name": "Директорские  субботы",
+            //     "City": "Москва",
+            //     "Count": "1",
+            //     "Link": "#",
+            //     "id": "",
+            //     "Category": "",
+            //     "Partners": [{"name": "Сочи"}
+            //     ]
+            // },
             {
                 "Name": "Музейная педагогика",
                 "City": "Брянск",
                 "Count": "1",
                 "Link": "#",
                 "id": "29",
-                "Category": "",
+                "Category": "Дополнительное образование",
                 "Partners": [{"name": "Сочи"}]
             },
             {
@@ -341,28 +368,28 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "30",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Ульяновск"}]
             },
 
-            {
-                "Name": "Проект \"Ресурсный класс\"",
-                "City": "Москва",
-                "Count": "2",
-                "Link": "#",
-                "id": "31",
-                "Category": "",
-                "Partners": [{"name": "Новомосковск"}, {"name": "Уфа"}]
-            },
+            // {
+            //     "Name": "Проект \"Ресурсный класс\"",
+            //     "City": "Москва",
+            //     "Count": "2",
+            //     "Link": "#",
+            //     "id": "31",
+            //     "Category": "",
+            //     "Partners": [{"name": "Новомосковск"}, {"name": "Уфа"}]
+            // },
 
 
             {
-                "Name": "Проект  ранней профориентации школьников \"Билет в будущее\":организация работы профессионально-ориентированных классов при поддержке социально-ответственного бизнеса",
+                "Name": "Проект  ранней профориентации школьников \"Билет в будущее\"",
                 "City": "Балаково",
                 "Count": "2",
                 "Link": "#",
                 "id": "32",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Выборг"}, {"name": "Ижевск"}]
             },
 
@@ -372,11 +399,11 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "33",
-                "Category": "",
+                "Category": "Дошкольное образование",
                 "Partners": [{"name": "Южно-Сахалинск"}]
             },
-
-            {"Name": "Областной проект \"Георгиевский сбор\"", "City": "Курск", "Partners": [{"name": "Белгород"}]},
+            //
+            // {"Name": "Областной проект \"Георгиевский сбор\"", "City": "Курск", "Partners": [{"name": "Белгород"}]},
 
             {
                 "Name": "От Фребеля до робота: растим будущих инженеров",
@@ -384,7 +411,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "34",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Белгород"}]
             },
 
@@ -394,7 +421,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "35",
-                "Category": "",
+                "Category": "Дошкольное образование",
                 "Partners": [{"name": "Белгород"}]
             },
 
@@ -404,7 +431,7 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "36",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Челябинская область"}]
             },
 
@@ -414,17 +441,17 @@ defined('_JEXEC') or die;
                 "Count": "1",
                 "Link": "#",
                 "id": "37",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Магнитогорск"}]
             },
 
             {
-                "Name":"Партнерство ВУЗа и школы как возможный путь повышения эффективности профориентационной работы среди старшеклассников",
+                "Name":"Партнерство ВУЗа и школы для повышения эффективности профориентационной работы среди старшеклассников",
                 "City": "Красноярск",
                 "Count": "1",
                 "Link": "#",
                 "id": "38",
-                "Category": "",
+                "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Волгоград"}]
             }
         ]
@@ -433,10 +460,11 @@ defined('_JEXEC') or die;
     cityFilters['creators'] = [];
     cityFilters['participants'] = [];
     cityFilters['category'] = [];
-    let middleCounter = 10;
+    let middleCounter = 9;
     makeCreatorCityFilter();
     makeParticipantCityFilter();
     makeCategoryFilter();
+    makeContactForm();
     makeChart(cityData, cityFilters);
 
     function guid() {
@@ -453,73 +481,19 @@ defined('_JEXEC') or die;
         let dataset = Object.assign({},data);
 
         dataset['children'].forEach(function (item, i, arr) {
-            if (filters['creators'] !== null && filters['creators'].length > 0 || filters['participants'] !== null && filters['participants'].length > 0  || filters['category'] !== null && filters['category'].length > 0) {
-                let partnersArray = Object.values(item['Partners']).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
+            item['Opacity']  = 1
+            let partnersArray = Object.values(item['Partners']).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
+            if ((filters['creators'] !== null && filters['creators'].length > 0) && !filters['creators'].includes(item['City'])) {
                 item['Opacity']  = 0.1
-
-                if (filters['creators'].includes(item['City']) && filters['participants'].filter(value => partnersArray.includes(value)).length > 0 && filters['category'].includes(item['Category'])){
-                    item['Opacity'] = 1
-                    console.log ('Creators')
-                    console.log (item['City'])
-                }
-                // if (filters['participants'].filter(value => partnersArray.includes(value)).length > 0){
-                //     item['Opacity'] = 1
-                //     console.log ('Participants')
-                //     console.log (item['City'])
-                // }
-                // if (filters['category'].includes(item['Category'])){
-                //     item['Opacity']  = 1
-                // }
-
-
             }
-            if (filters['creators'].length === 0 && filters['participants'].length === 0 && filters['category'].length === 0){
-                item['Opacity']  = 1
+            if ((filters['participants'] !== null && filters['participants'].length > 0) && !(filters['participants'].filter(value => partnersArray.includes(value)).length > 0)) {
+                item['Opacity']  = 0.1
+            }
+            if ((filters['category'] !== null && filters['category'].length > 0) && !filters['category'].includes(item['Category'])) {
+                item['Opacity']  = 0.1
             }
 
-
-        })
-        console.log("filters")
-        console.log(filters)
-
-        /*if (filters['creators'] !== null && filters['creators'].length > 0) {
-            dataset['children'] = dataset['children'].filter(function (i) {
-                if (filters['creators'].includes(i['City'])){
-                    dataset['children'][i['id']].Opacity  = 1
-                    console.log ('Creators')
-                    console.log (i['City'])
-                }
-                else {
-                    dataset['children'][i['id']].Opacity  = 0.5
-                };
-                return true;
-
-            });
-        }
-        if (filters['participants'] !== null && filters['participants'].length > 0 ){
-            dataset['children'] = dataset['children'].filter(function (i) {
-                let partnersArray = Object.values(i['Partners']).map(({name})=>[name]).reduce((a, b) => a.concat(b), []);
-                if (filters['participants'].filter(value => partnersArray.includes(value)).length > 0){
-                    dataset['children'][i]['Opacity'] = 1
-                }else{
-                    dataset['children'][i]['Opacity'] = 0.5
-                }
-                return true;
-
-            });
-        }
-        if (filters['category'] !== null && filters['category'].length > 0) {
-            dataset['children'] = dataset['children'].filter(function (i) {
-                if (filters['category'].includes(i['Category'])){
-                    i['Opacity']  = 1
-                }else{
-                    i['Opacity']  = 0.5
-                };
-                return true;
-            });
-        }*/
-        console.log("dataset")
-        console.log(dataset)
+        });
         let mouseclick = function(d) {
             if (Tooltip.style("opacity") === "1") {
                 Tooltip
@@ -530,13 +504,13 @@ defined('_JEXEC') or die;
             }else {
                 Tooltip
                     .style("opacity", 1)
-                    .html("<h5>Реализуют проект:</h5><ul>" + d.data.Partners.map(x => '<li key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<a href='" + d.data.Link + "'>Ссылка на проект</a>")
+                    .html("<h5>Реализуется в городах:</h5><ul>" + d.data.Partners.map(x => '<li key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<a href='" + d.data.Link + "'>Подробнее о проекте</a>")
                     .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
                     .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
                     .style("class", "bubble-tooltip")
                     .transition(1000);
             }
-        }
+        };
 
         let diameter = 1200;
         let color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -547,6 +521,8 @@ defined('_JEXEC') or die;
             .append("svg")
             .attr("width", diameter)
             .attr("height", diameter)
+            .attr('viewBox','0 0 '+Math.min(diameter,diameter)+' '+Math.min(diameter,diameter))
+            .attr('preserveAspectRatio','xMinYMin')
             .attr("class", "bubble")
             .attr("id", "bubble");
         let nodes = d3.hierarchy(dataset)
@@ -559,6 +535,17 @@ defined('_JEXEC') or die;
             .append("g")
             // .style("opacity", 1)
             .style("opacity", (d)=> d.data.Opacity)
+            .attr("transform", "translate(" + Math.min(diameter,diameter) / 2 + "," + Math.min(diameter,diameter) / 2 + ")")
+            .on("mouseover", function (d) {
+                d3.select(this).transition().duration(50)
+
+                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1.2 + ")")
+            })
+            .on("mouseout", function (d) {
+                d3.select(this).transition().duration(50)
+
+                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1 + ")")
+            })
             .attr("class", "node")
             .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
         node.append("circle")
@@ -632,11 +619,13 @@ defined('_JEXEC') or die;
         };
 
         (function($){
+            let fieldName = $('<h2/>',{text:'Поиск по параметрам'});
             let cityListName = $('<h5/>',{text:'Город-транслятор'});
             let cityList = $('<select/>',{id:'cityCreatorListSelect', class:'js-example-basic-multiple',name: '[]', multiple:"multiple", onChange:'updateCreatorCityFilter()', style:'margin-bottom: 10px;'});
             uniqCities().forEach(function (item) {
                 $('<option />', {value: item, text: item}).appendTo(cityList);
             })
+            fieldName.appendTo('#control-panel')
             cityListName.appendTo('#control-panel')
             cityList.appendTo('#control-panel');
             $('#cityCreatorListSelect').select2();
@@ -681,14 +670,23 @@ defined('_JEXEC') or die;
         };
 
         (function($){
-            let categoryistName = $('<h5/>',{text:'Направления'});
+            let categoryListName = $('<h5/>',{text:'Направления'});
             let categoryList = $('<select/>',{id:'categorySelect', class:'js-example-basic-multiple',name: '[]', multiple:"multiple", onChange:'updateCategoryFilter()', style:'margin-bottom: 10px;'});
             uniqCategories().forEach(function (item) {
                 $('<option />', {value: item, text: item}).appendTo(categoryList);
             })
-            categoryistName.appendTo('#control-panel')
+            categoryListName.appendTo('#control-panel')
             categoryList.appendTo('#control-panel');
             $('#categorySelect').select2();
+        })(jQuery);
+    }
+    function makeContactForm(){
+        (function($){
+
+            let contactFormButton = $('<a/>',{"uk-toggle":"target: #contactForm", type:"button", id:'contactButton', style:'margin-top:20px', text:'Обратная связь',class:'uk-button uk-button-success'});
+            contactFormButton.appendTo('#control-panel');
+
+
         })(jQuery);
     }
     function updateCreatorCityFilter(){
@@ -714,8 +712,8 @@ defined('_JEXEC') or die;
     }
     function updateCategoryFilter(){
         (function($){
-            if ($("#cityCategoryListSelect").val() !== null) {
-                cityFilters['category'] = $("#cityCategoryListSelect").val()
+            if ($("#categorySelect").val() !== null) {
+                cityFilters['category'] = $("#categorySelect").val()
             }else{
                 cityFilters['category'] = []
             }
