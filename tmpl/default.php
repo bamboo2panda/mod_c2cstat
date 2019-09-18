@@ -20,6 +20,10 @@ defined('_JEXEC') or die;
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 <!-- Load color scale -->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://test1.mioo.ru/media/mod_c2cstat/js/chosen_v1.8.7/chosen.jquery.min.js"></script>
@@ -31,29 +35,20 @@ defined('_JEXEC') or die;
     <div class="uk-width-medium-1-5">
         <div class="uk-panel uk-panel-box"><div id="control-panel"></div>
         </div>
+        <p style="margin-top:20px; text-align: right;" id="contact"></p>
+    </div>
+    <div id="contactForm" class="modal" style="left: 35% !important;">
+        <label>Сообщение</label><br /><textarea placeholder="Сообщение"></textarea><br />
+        <label>Email</label><br /><input type="email" placeholder="example@example.com"><br /><br />
+        <button type="submit">Отправить</button>
+        <a href="#" rel="modal:close">Закрыть окно</a>
     </div>
 
 </div>
-<!-- This is the modal -->
-<div id="contactForm" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title">Обратная связь</h2>
-        <button class="uk-modal-close" type="button"></button>
-    </div>
-</div>
+
 <script type="text/javascript">
     let cityData = {
         "children": [
-
-            // {
-            //     "Name": "Рейтингование образовательных организаций",
-            //     "City": "Москва",
-            //     "Count": "18",
-            //     "Link": "#",
-            //     "id": "1",
-            //     "Category": "Подготовка управленческих кадров",
-            //     "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Владимир"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Набережные Челны"}, {"name": "Орел"}, {"name": "Петрозаводск"}, {"name": "Салават"}, {"name": "Саратов"}, {"name": "Смоленск"}, {"name": "Тверь"}, {"name": "Сочи"}, {"name": "Волгоград"}]
-            // },
 
             {
                 "Name": "Система аттестации руководителей образовательных организаций",
@@ -278,7 +273,7 @@ defined('_JEXEC') or die;
             },
 
             {
-                "Name": "Образовательная программа \"Сетевая организация профильного обучения в школах Омска\"",
+                "Name": "\"Сетевая организация профильного обучения в школах\"",
                 "City": "Омск",
                 "Count": "1",
                 "Link": "#",
@@ -335,7 +330,7 @@ defined('_JEXEC') or die;
             },
 
             {
-                "Name": "Городский проект \"Эффективная начальная школа\"",
+                "Name": "\"Эффективная начальная школа\"",
                 "City": "Москва",
                 "Count": "1",
                 "Link": "#",
@@ -384,7 +379,7 @@ defined('_JEXEC') or die;
 
 
             {
-                "Name": "Проект  ранней профориентации школьников \"Билет в будущее\"",
+                "Name": "Ранняя профориентация школьников \"Билет в будущее\"",
                 "City": "Балаково",
                 "Count": "2",
                 "Link": "#",
@@ -394,7 +389,7 @@ defined('_JEXEC') or die;
             },
 
             {
-                "Name": "Организация альтернативных форм предоставления дошкольного образования в городе Белгороде",
+                "Name": "Организация альтернативных форм предоставления дошкольного образования",
                 "City": "Белгород",
                 "Count": "1",
                 "Link": "#",
@@ -416,7 +411,7 @@ defined('_JEXEC') or die;
             },
 
             {
-                "Name": "Образовательный проект \"ТИКО-конструирование и робототехника в ДОУ\"",
+                "Name": "\"ТИКО-конструирование и робототехника в дошкольном образовании\"",
                 "City": "Екатеринбург",
                 "Count": "1",
                 "Link": "#",
@@ -446,7 +441,7 @@ defined('_JEXEC') or die;
             },
 
             {
-                "Name":"Партнерство ВУЗа и школы для повышения эффективности профориентационной работы среди старшеклассников",
+                "Name":"Партнерство ВУЗа и школы - эффективная профориентация старшеклассников",
                 "City": "Красноярск",
                 "Count": "1",
                 "Link": "#",
@@ -520,6 +515,7 @@ defined('_JEXEC') or die;
         let svg = d3.select("#draw-panel")
             .append("svg")
             .attr("width", diameter)
+            .style("margin-top", "-100px")
             .attr("height", diameter)
             .attr('viewBox','0 0 '+Math.min(diameter,diameter)+' '+Math.min(diameter,diameter))
             .attr('preserveAspectRatio','xMinYMin')
@@ -683,8 +679,8 @@ defined('_JEXEC') or die;
     function makeContactForm(){
         (function($){
 
-            let contactFormButton = $('<a/>',{"uk-toggle":"target: #contactForm", type:"button", id:'contactButton', style:'margin-top:20px', text:'Обратная связь',class:'uk-button uk-button-success'});
-            contactFormButton.appendTo('#control-panel');
+            let contactFormButton = $('<a/>',{href:'#contactForm', rel:'modal:open', id:'contactButton', text:'Связаться с нами'});
+            contactFormButton.appendTo('#contact');
 
 
         })(jQuery);
