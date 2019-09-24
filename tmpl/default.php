@@ -494,22 +494,51 @@ defined('_JEXEC') or die;
 
         });
         let mouseclick = function(d) {
-            if (Tooltip.style("opacity") === "1") {
-                Tooltip
-                    .style("opacity", 0)
-                    .style("left", "0 px")
-                    .style("top", "0 px")
-                    .transition();
-            }else {
-                Tooltip
-                    .style("opacity", 1)
-                    .html("<h5>Реализуется в городах:</h5><ul>" + d.data.Partners.map(x => '<li key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<a href='" + d.data.Link + "'>Подробнее о проекте</a>")
-                    .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
-                    .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
-                    .style("class", "bubble-tooltip")
-                    .transition(1000);
+            console.log(d);
+            if (d.data.Opacity === 1){
+                Tooltip.id = d.data.id;
+                if (Tooltip.style("opacity") === "1") {
+                    Tooltip
+                        .style("opacity", 0)
+                        .style("left", "-1000px")
+                        .style("top", "-1000px")
+                        .transition().duration(500);
+                    console.log("Mouse click - Show");
+                }else {
+                    Tooltip
+                        .style("opacity", 1)
+                        .html("<h5>Реализуется в городах:</h5><ul>" + d.data.Partners.map(x => '<li key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<a href='" + d.data.Link + "'>Подробнее о проекте</a>")
+                        .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
+                        .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
+                        .style("class", "bubble-tooltip")
+                        .transition().duration(500);
+                    console.log("Mouse click - Hide");
+                }
             }
+
         };
+        let comeUp = function (d) {
+            console.log(d.data.id)
+            if (d.data.Opacity === 1){
+                this.parentNode.appendChild(this);
+                d3.select(this).transition().duration(100)
+
+                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1.2 + ")")
+                    // .attr('stroke', function (d) { return d3.hsl("steelblue"); })
+
+                    .attr('stroke-width', '5px');
+            }
+
+        };
+
+        let comeDown =  function (d) {
+
+            if (Tooltip.style("opacity") === "0" || d.data.id !== Tooltip.id) {
+                d3.select(this).transition().duration(500)
+                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1 + ")")
+                    .attr('stroke-width', '1px');
+            }
+        }
 
         let diameter = 1200;
         let color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -527,7 +556,6 @@ defined('_JEXEC') or die;
             .attr("class", "bubble")
             .attr("id", "bubble");
         let nodes = d3.hierarchy(dataset)
-        // .sum(Math.floor(Math.random() * Math.floor(15));
             .sum(function(d) { return Math.floor((middleCounter + d.Count * 0.9) * Math.floor(15)); });
         let node = svg.selectAll("node")
             .data(bubble(nodes).descendants())
@@ -536,24 +564,11 @@ defined('_JEXEC') or die;
             .append("g")
             .style("opacity", (d)=> d.data.Opacity)
             .style('position', 'absolute')
-            .attr('stroke', function (d) { return d3.hsl("steelblue"); })
+            .attr('stroke', function (d) { return d3.hsl("#ececec"); })
             .attr('stroke-width', '1px')
             .attr("transform", "translate(" + Math.min(diameter,diameter) / 2 + "," + Math.min(diameter,diameter) / 2 + ")")
-            .on("mouseover", function (d) {
-                d3.select(this).transition().duration(100)
-
-                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1.2 + ")")
-                    // .attr('stroke', function (d) { return d3.hsl("steelblue"); })
-                    .style ('z-index', 10000)
-                    .attr('stroke-width', '5px')
-            })
-            .on("mouseout", function (d) {
-                d3.select(this).transition().duration(500)
-
-                    .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1 + ")")
-                    .style ('z-index', 1)
-                    .attr('stroke-width', '1px')
-            })
+            .on("mouseover", comeUp)
+            .on("mouseout", comeDown)
             .attr("class", "node")
             .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
         node.append("circle")
@@ -580,9 +595,7 @@ defined('_JEXEC') or die;
 
             })
             .on("click", mouseclick)
-            .on("mouseover", function (d) {
 
-            })
             .style("cursor", "pointer")
             .html(function (d,i) {
                 return '<div style="width:' +
