@@ -17,18 +17,24 @@ defined('_JEXEC') or die;
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
-<script src="https://test1.mioo.ru/media/mod_c2cstat/js/chosen/chosen.jquery.min.js"></script>
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<style>
+    ul.col{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li.col {
+        flex-basis: 30%;
+        display: block;
+        padding-left: 1em;
+    }
 
+</style>
 <!-- Load color scale -->
 
-<script src="https://test1.mioo.ru/media/mod_c2cstat/js/chosen_v1.8.7/chosen.jquery.min.js"></script>
 <h3 style="text-align: center; padding-left: 5%; padding-right: 5%;">В разделе представлена инфографика о городах-участниках проекта &laquo;Взаимообучение городов&raquo;, которые транслируют эффективные практики в системе образования, и городах, которые применяют их в своей деятельности</h3>
 <!-- Create a div where the graph will take place -->
 <div class="uk-grid">
@@ -52,7 +58,15 @@ defined('_JEXEC') or die;
 <script type="text/javascript">
     let cityData = {
         "children": [
-
+            {
+                "Name": "Взаимообучение городов",
+                "City": "Москва",
+                "Count": "92",
+                "Link": "https://mcrkpo.ru/upravlentsam/depozitarij.html",
+                "id": "19",
+                "Category": "",
+                "Partners": [{"name": "Архангельск"}, {"name": "Ачинск"}, {"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Белгород"}, {"name": "Березники"}, {"name": "Бийск"}, {"name": "Братск	"}, {"name": "Брянск"}, {"name": "Великий Новгород"}, {"name": "Владимир"}, {"name": "Волгоград"}, {"name": "Волжский"}, {"name": "Воронеж"}, {"name": "Выборг"}, {"name": "Димитровград"}, {"name": "Дзержинск"}, {"name": "Евпатория"}, {"name": "Екатеринбург"}, {"name": "Елец"}, {"name": "Златоуст"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Йошкар-Ола"}, {"name": "Иркутск"}, {"name": "Казань"}, {"name": "Калининград"}, {"name": "Калуга"}, {"name": "Каспийск"}, {"name": "Кемерово"}, {"name": "Киров"}, {"name": "Кисловодск"}, {"name": "Коломна"}, {"name": "Кострома"}, {"name": "Краснодар"}, {"name": "Красноярск"}, {"name": "Курган"}, {"name": "Курск"}, {"name": "Липецк"}, {"name": "Магнитогорск"}, {"name": "Миасс"}, {"name": "Москва"}, {"name": "Набережные Челны"}, {"name": "Находка"}, {"name": "Нефтекамск"}, {"name": "Нефтеюганск"}, {"name": "Нижневартовск"}, {"name": "Нижний Новгород"}, {"name": "Новокузнецк"}, {"name": "Новомосковск"}, {"name": "Новороссийск"}, {"name": "Новосибирск"}, {"name": "Ногинск"}, {"name": "Обнинск"}, {"name": "Омск"}, {"name": "Оренбург"}, {"name": "Орел"}, {"name": "Пенза"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Псков"}, {"name": "Пятигорск"}, {"name": "Ростов-на-Дону"}, {"name": "Рубцовск"}, {"name": "Рыбинск"}, {"name": "Рязань"}, {"name": "Салават"}, {"name": "Самара"}, {"name": "Саранск"}, {"name": "Саратов"}, {"name": "Севастополь"}, {"name": "Северск"}, {"name": "Смоленск"}, {"name": "Сочи"}, {"name": "Ставрополь"}, {"name": "Старый Оскол"}, {"name": "Тамбов"}, {"name": "Тверь"}, {"name": "Тольятти"}, {"name": "Томск"}, {"name": "Тюмень"}, {"name": "Улан-Удэ"}, {"name": "Ульяновск"}, {"name": "Уфа"}, {"name": "Хабаровск"}, {"name": "Чебоксары"}, {"name": "Челябинск"}, {"name": "Чита"}, {"name": "Элиста"}, {"name": "Энгельс"}, {"name": "Якутск"}, {"name": "Ярославль"}]
+            },
             {
                 "Name": "Система аттестации руководителей образовательных организаций",
                 "City": "Москва",
@@ -71,6 +85,7 @@ defined('_JEXEC') or die;
                 "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Архангельск"}, {"name": "Балаково"}, {"name": "Владимир"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Магнитогорск"}, {"name": "Новомосковск"}, {"name": "Омск"}, {"name": "Петрозаводск"}, {"name": "Прокопьевск"}, {"name": "Салават"}, {"name": "Сочи"}, {"name": "Тверь"}, {"name": "Тамбов"}, {"name": "Саранск"}, {"name": "Волгоград"}]
             },
+
             {
                 "Name": "Управленческий проект",
                 "City": "Москва",
@@ -182,7 +197,7 @@ defined('_JEXEC') or die;
                 "Name": "\"Академический (научно-технологический) класс в московской школе\"",
                 "City": "Москва",
                 "Count": "2",
-                "Link": "http://profil.mos.ru/ntek.html#/",
+                "Link": "http://profil.mos.ru/ntek/o-proekte.html ",
                 "id": "13",
                 "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Братск"}, {"name": "Кемерово"}]
@@ -236,15 +251,7 @@ defined('_JEXEC') or die;
                 "Category": "Подготовка управленческих кадров",
                 "Partners": [{"name": "Магнитогорск"}, {"name": "Саратов"}, {"name": "Тамбов"}, {"name": "Тверь"}]
             },
-            {
-                "Name": "Взаимообучение городов",
-                "City": "Москва",
-                "Count": "5",
-                "Link": "https://mcrkpo.ru/upravlentsam/depozitarij.html",
-                "id": "19",
-                "Category": "Подготовка управленческих кадров",
-                "Partners": [{"name": "Архагельск"}, {"name": "Улан-Удэ"}, {"name": "Кемерово"}, {"name": "Грозный"}, {"name": "Новосибирск"}]
-            },
+
             {
                 "Name": "Социальное партнерство в дошкольном образовании",
                 "City": "Сочи",
@@ -364,7 +371,7 @@ defined('_JEXEC') or die;
                 "Name": "Университетские субботы",
                 "City": "Москва",
                 "Count": "1",
-                "Link": "http://us.educom.ru/",
+                "Link": "http://us.educom.ru/about",
                 "id": "30",
                 "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Ульяновск"}]
@@ -507,7 +514,7 @@ defined('_JEXEC') or die;
                 }else {
                     Tooltip
                         .style("opacity", 1)
-                        .html("<h5>Реализуется в городах:</h5><ul>" + d.data.Partners.map(x => '<li key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<a href='" + d.data.Link + "'>Подробнее о проекте</a>")
+                        .html("<h5>Реализуется в городах:</h5><ul class='col'>" + d.data.Partners.map(x => '<li class="col" key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<strong><a target='_blank' href='" + d.data.Link + "'>Подробнее о проекте</a></strong>")
                         .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
                         .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
                         .style("class", "bubble-tooltip")
@@ -685,7 +692,9 @@ defined('_JEXEC') or die;
             }
             let categories = []
             for (let v in cityData['children']){
-                categories.push(cityData['children'][v]['Category'])
+                if (cityData['children'][v]['Category'] !== ""){
+                    categories.push(cityData['children'][v]['Category']);
+                }
             }
             let u = categories.filter(onlyUnique).sort();
             return u
