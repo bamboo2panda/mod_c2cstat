@@ -21,6 +21,7 @@ defined('_JEXEC') or die;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <style>
     ul.col{
         display: flex;
@@ -47,10 +48,7 @@ defined('_JEXEC') or die;
     </div>
     <div id="contactForm" class="modal" style="left: 35% !important;">
         <h3>Связаться с нами</h3>
-        <label>Сообщение</label><br /><textarea placeholder=""></textarea><br />
-        <label>Ваш email</label><br /><input type="email" placeholder=""><br /><br />
-        <button type="submit">Отправить</button>&nbsp;
-        <a href="#" rel="modal:close">Закрыть</a>
+        {rsform 49}
     </div>
 
 </div>
@@ -146,7 +144,7 @@ defined('_JEXEC') or die;
                 "Name": "\"Инженерный класс в московской школе\"",
                 "City": "Москва",
                 "Count": "10",
-                "Link": "http://profil.mos.ru/inj.html#/",
+                "Link": "http://profil.mos.ru/inj/o-proekte.html",
                 "id": "8",
                 "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Балаково"}, {"name": "Барнаул"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Кемерово"}, {"name": "Тверь"}, {"name": "Нефтеюганск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
@@ -156,7 +154,7 @@ defined('_JEXEC') or die;
                 "Name": "\"Медицинский класс в московской школе\"",
                 "City": "Москва",
                 "Count": "7",
-                "Link": "http://profil.mos.ru/med.html#/",
+                "Link": "http://profil.mos.ru/med/o-proekte.html",
                 "id": "9",
                 "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Барнаул"}, {"name": "Белгород"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Ижевск"}, {"name": "Тверь"}, {"name": "Саранск"}, {"name": "Волгоград"}]
@@ -166,7 +164,7 @@ defined('_JEXEC') or die;
                 "Name": "\"Кадетский класс в московской школе\"",
                 "City": "Москва",
                 "Count": "17",
-                "Link": "https://school.moscow/files/projects/pre-professional-classes/kadet.pdf",
+                "Link": "http://profil.mos.ru/kadet/o-proekte.html",
                 "id": "10",
                 "Category": "Предпрофессиональное образование",
                 "Partners": [{"name": "Барнаул"}, {"name": "Белгород"}, {"name": "Бийск"}, {"name": "Братск"}, {"name": "Выборг"}, {"name": "Иваново"}, {"name": "Ижевск"}, {"name": "Калуга"}, {"name": "Кемерово"}, {"name": "Магнитогорск"}, {"name": "Нефтеюганск"}, {"name": "Новомосковск"}, {"name": "Салават"}, {"name": "Тверь"}, {"name": "Челябинск"}, {"name": "Саранск"}, {"name": "Волгоград"}]
@@ -465,13 +463,33 @@ defined('_JEXEC') or die;
     cityFilters['creators'] = [];
     cityFilters['participants'] = [];
     cityFilters['category'] = [];
+    let colors = {
+        "Предпрофессиональное образование": "rgb(31, 119, 180)",
+        "Дошкольное образование": "rgb(227, 119, 194)",
+        "Подготовка управленческих кадров": "rgb(44, 160, 44)",
+        "Начальное образование" : "rgb(23, 190, 207)",
+        "Московская электронная школа" : "rgb(30, 230, 189)",
+        "Интеграция образовательных ресурсов" : "rgb(188, 189, 34)",
+        "Инклюзивная среда" : "rgb(148, 103, 189)",
+        "Дополнительное образование" : "rgb(140, 86, 75)",
+        "Выявление и развитие талантов" : "rgb(255, 127, 14)",
+        "" : "rgb(214, 39, 40)"
+    };
+    console.log("colors");
+    console.log(colors);
     let middleCounter = 9;
     makeCreatorCityFilter();
     makeParticipantCityFilter();
     makeCategoryFilter();
     makeContactForm();
     makeChart(cityData, cityFilters);
-
+    document.addEventListener('mousemove', mousePosition);
+    let mouseX;
+    let mouseY;
+    function mousePosition(e) {
+        mouseX = e['pageX'] || e.clientX;
+        mouseY = e['pageY'] || e.clientY;
+    }
     function guid() {
         function _p8(s) {
             let p = (Math.random().toString(16)+"000000000").substr(2,8);
@@ -504,22 +522,36 @@ defined('_JEXEC') or die;
             console.log(d);
             if (d.data.Opacity === 1){
                 Tooltip.id = d.data.id;
+
                 if (Tooltip.style("opacity") === "1") {
                     Tooltip
                         .style("opacity", 0)
                         .style("left", "-1000px")
                         .style("top", "-1000px")
                         .transition().duration(500);
-                    console.log("Mouse click - Show");
+                    console.log("Mouse click - Hide");
+
+                    //TODO: Make
+                    // comeDown();
                 }else {
                     Tooltip
                         .style("opacity", 1)
+
                         .html("<h5>Реализуется в городах:</h5><ul class='col'>" + d.data.Partners.map(x => '<li class="col" key = ' + x.name + '>' + x.name + '</li>').join(' ') + "</ul>" + "<strong><a target='_blank' href='" + d.data.Link + "'>Подробнее о проекте</a></strong>")
+                        // .style("left", (d.x) + "px")
+                        // .style("top", (d.y) + "px")
+                        // .style("left", (mouseX) + "px")
+                        // .style("top", (mouseY - diameter) + "px")
                         .style("left", (d.x + d3.mouse(this)[0]+ 30) + "px")
                         .style("top", (d.y + d3.mouse(this)[1] + 30) + "px")
                         .style("class", "bubble-tooltip")
                         .transition().duration(500);
-                    console.log("Mouse click - Hide");
+                    console.log('d3.mouse(this)[0]');
+                    console.log(mouseX);
+                    console.log(mouseY);
+                    // .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")opacity(" + 1 + ")");
+                    console.log("Mouse click - Show");
+                    d3.event.stopPropagation();
                 }
             }
 
@@ -545,8 +577,17 @@ defined('_JEXEC') or die;
                     .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")scale(" + 1 + ")")
                     .attr('stroke-width', '1px');
             }
+        };
+
+        let hideTooltip = function(){
+            Tooltip.style("opacity", 0)
+                .style("left", "-1000px")
+                .style("top", "-1000px");
+            console.log("hideTooltip")
         }
 
+
+        // let diameter = document.getElementById('draw-panel').offsetWidth;
         let diameter = 1200;
         let color = d3.scaleOrdinal(d3.schemeCategory10);
         let bubble = d3.pack(dataset)
@@ -554,6 +595,7 @@ defined('_JEXEC') or die;
             .padding(5);
         let svg = d3.select("#draw-panel")
             .append("svg")
+            .attr("id", "svg")
             .attr("width", diameter)
             .style("margin-top", "-70px")
             .style('z-index', 1)
@@ -561,7 +603,8 @@ defined('_JEXEC') or die;
             .attr('viewBox','0 0 '+Math.min(diameter,diameter)+' '+Math.min(diameter,diameter))
             .attr('preserveAspectRatio','xMinYMin')
             .attr("class", "bubble")
-            .attr("id", "bubble");
+            .attr("id", "bubble")
+            .on("click", hideTooltip);
         let nodes = d3.hierarchy(dataset)
             .sum(function(d) { return Math.floor((middleCounter + d.Count * 0.9) * Math.floor(15)); });
         let node = svg.selectAll("node")
@@ -583,8 +626,9 @@ defined('_JEXEC') or die;
             .attr("r", function(d) {
                 return d.r;
             })
-            .style("fill", (d,i)  => color(i))
-        // .style("stroke-width", "10px");
+            .style("fill", (d,i)  => d3.hsl(colors[d.data.Category]))
+        console.log("d");
+        console.log(d3.hsl(colors['Предпрофессиональное образование']));
 
         node.append('foreignObject')
             .attr("id", guid())
@@ -626,6 +670,8 @@ defined('_JEXEC') or die;
 
         let Tooltip = d3.select("#draw-panel")
             .append("div")
+            .attr('preserveAspectRatio','xMinYMin')
+            .attr('viewBox','0 0 '+Math.min(diameter,diameter)+' '+Math.min(diameter,diameter))
             .style("opacity", 0)
             .attr("class", "tooltip")
             .style("background-color", "white")
